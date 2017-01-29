@@ -11,11 +11,26 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.jirakul_sizebook.MainActivity"
+    android:background="@android:color/white"
     tools:showIn="@layout/activity_main">
-    
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:text="Name"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="15sp"/>
+
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="hi" />
+        android:layout_below="@id/header"
+        android:gravity="left"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:background="@android:color/transparent"
+        android:text="John Doe" />
 </RelativeLayout>
