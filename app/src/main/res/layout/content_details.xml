@@ -3,12 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -27,95 +28,62 @@
         android:textStyle="bold"
         android:textColor="@android:color/black"
         android:text="John Doe"/>
-
     <TextView
-        android:id="@+id/date_header"
+        android:id="@+id/name1"
         android:layout_below="@id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:paddingBottom="20dp"
-        android:text="Date"/>
-
-    <TextView
-        android:id="@+id/neck_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:layout_below="@id/date_header"
-        android:text="Neck"/>
-
-    <TextView
-        android:id="@+id/bust_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:layout_below="@id/neck_header"
-        android:text="Bust"/>
-
-    <TextView
-        android:id="@+id/chest_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:layout_below="@id/bust_header"
-        android:text="Chest"/>
-    <TextView
-        android:id="@+id/waist_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:layout_below="@id/chest_header"
-        android:text="Waist"/>
-    <TextView
-        android:id="@+id/hip_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:layout_below="@id/waist_header"
-        android:text="Hip"/>
-    <TextView
-        android:id="@+id/Inseam_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:layout_below="@id/hip_header"
-        android:text="Inseam"/>
-    <TextView
-        android:id="@+id/comment_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:layout_below="@id/Inseam_header"
-        android:text="Comment "/>
-
-
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="John Doe"/>
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/date_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/neck_header"
-        android:layout_toRightOf="@+id/date_header"
-        android:layout_toEndOf="@+id/Inseam_header">
-
-        <EditText android:id="@+id/edit_message"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="163dp"
-            android:hint="@string/edit_message" />
+            android:textSize="18sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+            android:paddingRight="20dp"
+            android:text="Date"/>
+
+        <EditText android:id="@+id/edit_date"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit"/>
+            //android:hint="@string/edit_date" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_send" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingRight="20dp"
+            android:text="Neck"/>
+
+        <EditText android:id="@+id/edit_neck"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit"/>
+            //android:hint="@string/edit_neck" />
 
         <Button
             android:layout_width="wrap_content"
@@ -123,7 +91,158 @@
             android:text="@string/button_send" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/bust_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingRight="20dp"
+            android:text="Bust"/>
 
-</RelativeLayout>
+        <EditText android:id="@+id/edit_bust"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_bust" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_send" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/chest_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="Chest"/>
+        <EditText android:id="@+id/edit_chest"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_chest" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_send" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/waist_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="Waist"/>
+        <EditText android:id="@+id/edit_waist"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_waist" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_send" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/hip_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="Hip"/>
+        <EditText android:id="@+id/edit_hip"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_hip" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_send" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/Inseam_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingRight="20dp"
+            android:text="Inseam" />
+        <EditText android:id="@+id/edit_inseam"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_inseam" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_send" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/comment_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingRight="20dp"
+            android:text="Comment"/>
+        <EditText android:id="@+id/edit_comment"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_comment" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_send" />
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
 
 </ScrollView>
