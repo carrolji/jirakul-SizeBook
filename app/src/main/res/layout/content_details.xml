@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,6 +15,115 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.jirakul_sizebook.DetailsActivity"
+    android:background="@android:color/white"
     tools:showIn="@layout/activity_details">
 
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:paddingBottom="25dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="John Doe"/>
+
+    <TextView
+        android:id="@+id/date_header"
+        android:layout_below="@id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingBottom="20dp"
+        android:text="Date"/>
+
+    <TextView
+        android:id="@+id/neck_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@id/date_header"
+        android:text="Neck"/>
+
+    <TextView
+        android:id="@+id/bust_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@id/neck_header"
+        android:text="Bust"/>
+
+    <TextView
+        android:id="@+id/chest_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@id/bust_header"
+        android:text="Chest"/>
+    <TextView
+        android:id="@+id/waist_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@id/chest_header"
+        android:text="Waist"/>
+    <TextView
+        android:id="@+id/hip_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@id/waist_header"
+        android:text="Hip"/>
+    <TextView
+        android:id="@+id/Inseam_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@id/hip_header"
+        android:text="Inseam"/>
+    <TextView
+        android:id="@+id/comment_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@id/Inseam_header"
+        android:text="Comment "/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/neck_header"
+        android:layout_toRightOf="@+id/date_header"
+        android:layout_toEndOf="@+id/Inseam_header">
+
+        <EditText android:id="@+id/edit_message"
+            android:layout_height="wrap_content"
+            android:layout_width="163dp"
+            android:hint="@string/edit_message" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_send" />
+    </LinearLayout>
+
+
 </RelativeLayout>
+
+</ScrollView>
