@@ -3,246 +3,204 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_details"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.jirakul_sizebook.DetailsActivity"
-    android:background="@android:color/white"
-    tools:showIn="@layout/activity_details">
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:paddingBottom="25dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:text="John Doe"/>
-    <TextView
-        android:id="@+id/name1"
-        android:layout_below="@id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:text="John Doe"/>
-    <LinearLayout
-        android:id="@+id/date_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:paddingTop="10dp"
-            android:paddingBottom="20dp"
-            android:paddingRight="20dp"
-            android:text="Date"/>
-
-        <EditText android:id="@+id/edit_date"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/edit"/>
-            //android:hint="@string/edit_date" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <TextView
+            android:id="@+id/name1"
+            android:paddingTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:paddingRight="20dp"
-            android:text="Neck"/>
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:paddingLeft="20dp"
+            android:text="John Doe"/>
 
-        <EditText android:id="@+id/edit_neck"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/edit"/>
-            //android:hint="@string/edit_neck" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/content_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context="com.example.jirakul_sizebook.DetailsActivity"
+            android:background="@android:color/white"
+            tools:showIn="@layout/activity_details">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send" />
+
+
+            <LinearLayout
+                android:id="@+id/date_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Date"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Neck"/>
+
+                <TextView
+                    android:id="@+id/bust_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Bust"/>
+
+                <TextView
+                    android:id="@+id/chest_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    android:textSize="18sp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:text="Chest"/>
+
+                <TextView
+                    android:id="@+id/waist_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    android:textSize="18sp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:text="Waist"/>
+
+                <TextView
+                    android:id="@+id/hip_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    android:textSize="18sp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:text="Hip"/>
+
+                <TextView
+                    android:id="@+id/Inseam_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Inseam" />
+
+                <TextView
+                    android:id="@+id/comment_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Comment"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText android:id="@+id/edit_date"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp"
+                    android:hint="@string/edit_date" />
+
+                <EditText android:id="@+id/edit_neck"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:hint="@string/edit"/>
+                //android:hint="@string/edit_neck" />
+
+                <EditText android:id="@+id/edit_bust"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="20dp"
+                    android:hint="@string/edit_bust" />
+
+                <EditText android:id="@+id/edit_chest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:hint="@string/edit_chest" />
+
+                <EditText android:id="@+id/edit_waist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:hint="@string/edit_waist" />
+
+                <EditText android:id="@+id/edit_hip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:hint="@string/edit_hip" />
+
+                <EditText android:id="@+id/edit_inseam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:hint="@string/edit_inseam" />
+
+                <EditText android:id="@+id/edit_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:hint="@string/edit_comment" />
+
+            </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+
+    <Button
+        android:id="@+id/save_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/bust_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:paddingRight="20dp"
-            android:text="Bust"/>
-
-        <EditText android:id="@+id/edit_bust"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/edit_bust" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/chest_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="20dp"
-            android:textSize="18sp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:text="Chest"/>
-        <EditText android:id="@+id/edit_chest"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/edit_chest" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/waist_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="20dp"
-            android:textSize="18sp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:text="Waist"/>
-        <EditText android:id="@+id/edit_waist"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/edit_waist" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/hip_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="20dp"
-            android:textSize="18sp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:text="Hip"/>
-        <EditText android:id="@+id/edit_hip"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/edit_hip" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/Inseam_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:paddingRight="20dp"
-            android:text="Inseam" />
-        <EditText android:id="@+id/edit_inseam"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/edit_inseam" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/comment_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:paddingRight="20dp"
-            android:text="Comment"/>
-        <EditText android:id="@+id/edit_comment"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/edit_comment" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_send" />
-    </LinearLayout>
-
-
-
-
-
+        android:text="Save Data"
+        android:onClick="saveData"/>
 
 
 </LinearLayout>
 
 </ScrollView>
+
+

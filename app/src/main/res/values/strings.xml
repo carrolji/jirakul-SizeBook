@@ -11,5 +11,5 @@
     <string name="edit_waist">Enter waist size</string>
     <string name="edit_hip">Enter hip size</string>
     <string name="edit_inseam">Enter inseam</string>
-    <string name="button_send">Send</string>
+    <string name="button_send">Enter</string>
 </resources>
