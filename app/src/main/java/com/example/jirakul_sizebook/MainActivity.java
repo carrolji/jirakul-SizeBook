@@ -10,6 +10,7 @@ import android.telecom.Call;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+/*
         TextView name = (TextView) findViewById(R.id.name2);
 
         name.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivity(nameIntent);
             }
-        });
+        });*/
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -51,12 +52,22 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        String[] foods = {"James","John","Bill","Same","Smith","Paul"};
+
+
+        String[] names = {"James","John","Bill","Same","Smith","Paul"};
 
         ListAdapter nameAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,foods);
+                android.R.layout.simple_list_item_1,names);
         ListView nameListView = (ListView) findViewById(R.id.list_name);
         nameListView.setAdapter(nameAdapter);
+
+        nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                        Intent appInfo = new Intent(MainActivity.this, DetailsActivity.class);
+                        startActivity(appInfo);
+            }
+        });
     }
 
 
