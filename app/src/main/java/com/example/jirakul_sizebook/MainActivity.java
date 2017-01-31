@@ -10,8 +10,11 @@ import android.telecom.Call;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -48,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        String[] foods = {"James","John","Bill","Same","Smith","Paul"};
+
+        ListAdapter nameAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,foods);
+        ListView nameListView = (ListView) findViewById(R.id.list_name);
+        nameListView.setAdapter(nameAdapter);
     }
 
 

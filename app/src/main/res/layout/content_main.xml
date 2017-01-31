@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -24,18 +25,6 @@
             android:textSize="15sp"/>
 
     <TextView
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header"
-        android:gravity="left"
-        android:paddingTop="15dp"
-        android:paddingLeft="10dp"
-        android:textSize="20dp"
-        android:textColor="@android:color/black"
-        android:text="John Doe" />
-
-    <TextView
         android:id="@+id/name2"
         android:layout_below="@id/name"
         android:layout_width="match_parent"
@@ -46,4 +35,9 @@
         android:textSize="20dp"
         android:textColor="@android:color/black"
         android:onClick="openDetails"/>
-</RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+</LinearLayout>
