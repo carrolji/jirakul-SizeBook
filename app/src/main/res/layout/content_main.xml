@@ -23,9 +23,14 @@
             android:text="Name"
             android:fontFamily="sans-serif-condensed"
             android:textSize="15sp"/>
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add a new item to List View"/>
 
     <ListView
-        android:id="@+id/list_name"
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </ListView>
