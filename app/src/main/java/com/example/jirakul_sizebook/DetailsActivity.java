@@ -33,7 +33,7 @@ public class DetailsActivity extends AppCompatActivity {
         editText1 = (EditText) findViewById(R.id.edit_date);
         savednotes = getSharedPreferences("notes",MODE_PRIVATE);
 
-        editText1.setText(savednotes.getString("tag","Edit"));
+        editText1.setText(savednotes.getString("tag","date"));
 
         saveData.setOnClickListener(saveButtonListener);
 
