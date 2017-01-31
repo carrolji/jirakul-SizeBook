@@ -51,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        String[] names = {"James","John","Bill","Same","Smith","Paul"};
-
        /* ListAdapter nameAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,names);*/
 
@@ -68,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         nameListView = (ListView) findViewById(R.id.listView);
         listItems = new ArrayList<String>();
-        listItems.add("First Item - added on Activity Create");
+        //listItems.add("First Item - added on Activity Create");
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,listItems);
         nameListView.setAdapter(adapter);
 
