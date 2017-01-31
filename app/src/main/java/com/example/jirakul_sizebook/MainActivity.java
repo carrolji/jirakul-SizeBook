@@ -21,6 +21,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import static com.example.jirakul_sizebook.R.styleable.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         ListView nameListView = (ListView) findViewById(R.id.list_name);
         nameListView.setAdapter(nameAdapter);
 
-        nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener()  {
                     @Override
                     public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
                         Intent appInfo = new Intent(MainActivity.this, DetailsActivity.class);
