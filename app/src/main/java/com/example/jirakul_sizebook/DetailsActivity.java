@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -20,8 +21,16 @@ import static com.example.jirakul_sizebook.R.styleable.FloatingActionButton;
 public class DetailsActivity extends AppCompatActivity {
 
     private Button saveData;
-    private EditText editText1;
     private SharedPreferences savednotes;
+    private EditText nameEditText;
+    private EditText dateEditText;
+    private EditText neckEditText;
+    private EditText bustEditText;
+    private EditText chestEditText;
+    private EditText waistEditText;
+    private EditText hipEditText;
+    private EditText inseamEditText;
+    private EditText commentEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +39,21 @@ public class DetailsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        nameEditText = (EditText) findViewById(R.id.name);
+        dateEditText = (EditText) findViewById(R.id.edit_date);
+        neckEditText = (EditText) findViewById(R.id.edit_neck);
+        bustEditText = (EditText) findViewById(R.id.edit_bust);
+        chestEditText  = (EditText) findViewById(R.id.edit_chest);
+        waistEditText = (EditText) findViewById(R.id.edit_waist);
+        hipEditText = (EditText) findViewById(R.id.edit_hip);
+        inseamEditText = (EditText) findViewById(R.id.edit_inseam);
+        commentEditText = (EditText) findViewById(R.id.edit_comment);
+
         saveData = (Button) findViewById(R.id.save_data);
-        editText1 = (EditText) findViewById(R.id.edit_date);
         savednotes = getSharedPreferences("notes",MODE_PRIVATE);
 
-        editText1.setText(savednotes.getString("tag","date"));
+        nameEditText.setText(savednotes.getString("tag","date"));
+        neckEditText.setText(savednotes.getString("tag","neck"));
 
         saveData.setOnClickListener(saveButtonListener);
 
@@ -47,18 +66,21 @@ public class DetailsActivity extends AppCompatActivity {
         preferencesEditor.commit();
     }
 
+
     public View.OnClickListener saveButtonListener = new View.OnClickListener(){
 
         @Override
         public void onClick(View v) {
-            if(editText1.getText().length()>0){
-                makeTag(editText1.getText().toString());
+            if(nameEditText.getText().length()>0){
+                makeTag(nameEditText.getText().toString());
 
-                ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(editText1.getWindowToken(),0);
+                ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(nameEditText.getWindowToken(),0);
 
             }
+
         }
     };
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
