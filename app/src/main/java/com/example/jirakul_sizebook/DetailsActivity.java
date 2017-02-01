@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import static com.example.jirakul_sizebook.R.id.editText;
 import static com.example.jirakul_sizebook.R.styleable.FloatingActionButton;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -66,7 +67,7 @@ public class DetailsActivity extends AppCompatActivity {
         preferencesEditor.commit();
     }
 
-
+    String random = "John";
     public View.OnClickListener saveButtonListener = new View.OnClickListener(){
 
         @Override
@@ -77,6 +78,11 @@ public class DetailsActivity extends AppCompatActivity {
                 ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(nameEditText.getWindowToken(),0);
 
             }
+            Intent intent = new Intent(getBaseContext(),MainActivity.class);
+            intent.putExtra("SearchText",random);
+            startActivity(intent);
+
+            //finish();
 
         }
     };

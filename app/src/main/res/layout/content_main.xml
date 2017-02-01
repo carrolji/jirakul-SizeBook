@@ -27,7 +27,7 @@
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Add a new item to List View"/>
+        android:hint="Add a name"/>
 
     <ListView
         android:id="@+id/listView"

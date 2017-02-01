@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         nameListView.setAdapter(adapter);
 
 
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +72,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            String value = extras.getString("SearchText");
+            listItems.add(value);
+            adapter.notifyDataSetChanged();
+        }
+
         nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
