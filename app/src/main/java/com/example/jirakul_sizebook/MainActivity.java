@@ -1,5 +1,6 @@
 package com.example.jirakul_sizebook;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -77,10 +78,11 @@ public class MainActivity extends AppCompatActivity {
 /*
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            String value = extras.getString("SearchText");
+            String value = extras.getString("result");
             listItems.add(value);
             adapter.notifyDataSetChanged();
         }*/
+
 
         nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -92,7 +94,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        Intent i = new Intent(this, DetailsActivity.class);
+        startActivityForResult(i,1);
+
+        if (requestCode ==1){
+            if(resultCode == Activity.RESULT_OK){
+                final String result = data.getStringExtra("result");
+
+            }
+        }
+    }
 
 /*
     @Override

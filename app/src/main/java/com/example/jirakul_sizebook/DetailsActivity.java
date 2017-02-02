@@ -75,7 +75,7 @@ public class DetailsActivity extends AppCompatActivity {
             contact.set_inseam(inseamEditText.getText().toString());
 
             Intent intent = new Intent();
-            intent.putExtra("SearchText",contact);
+            intent.putExtra("result",contact);
             setResult(Activity.RESULT_OK,intent);
             finish();
 
