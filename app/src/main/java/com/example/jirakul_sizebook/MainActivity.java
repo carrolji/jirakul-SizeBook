@@ -1,5 +1,6 @@
 package com.example.jirakul_sizebook;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -19,6 +20,18 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,10 +40,11 @@ import static com.example.jirakul_sizebook.R.styleable.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editText;
-    ListView nameListView;
-    ArrayList<String> listItems;
-    ArrayAdapter<String> adapter;
+    private static final String FILENAME = "file.sav";
+    private EditText editText;
+    private ListView nameListView;
+    private ArrayList<Contact> listItems;
+    private ArrayAdapter<Contact> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,28 +52,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-/*
-        TextView name = (TextView) findViewById(R.id.name2);
-
-        name.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent nameIntent = new Intent(MainActivity.this, DetailsActivity.class);
-
-                startActivity(nameIntent);
-            }
-        });*/
 
         editText = (EditText) findViewById(R.id.editText);
         nameListView = (ListView) findViewById(R.id.listView);
-        listItems = new ArrayList<String>();
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,listItems);
+        listItems = new ArrayList<Contact>();
+        adapter = new ArrayAdapter<Contact>(this,android.R.layout.simple_expandable_list_item_1,listItems);
         nameListView.setAdapter(adapter);
 
-
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,12 +74,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+/*
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             String value = extras.getString("SearchText");
             listItems.add(value);
             adapter.notifyDataSetChanged();
-        }
+        }*/
 
         nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -88,11 +90,50 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
 
+    
 
+/*
+    @Override
+    protected void onStart(){
+        super.onStart();
+        loadFromFile();
+        //adapter = new ArrayAdapter<Contact>(this,R.layout.list_item,listItems);
+        //nameListView.setAdapter(adapter);
+    }*/
+
+    private void loadFromFile(){
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            Type listType = new TypeToken<ArrayList<Contact>>() {
+            }.getType();
+            listItems = gson.fromJson(in, listType);
+        }catch(FileNotFoundException e){
+            listItems = new ArrayList<Contact>();
+        }catch(IOException e){
+            throw new RuntimeException();
+        }
+    }
+
+    private void saveInFile(){
+        try{
+            FileOutputStream fos = openFileOutput(FILENAME,
+                    Context.MODE_PRIVATE);
+            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
+
+            Gson gson = new Gson();
+            gson.toJson(listItems,out);
+            out.flush();
+            fos.close();
+        }catch(FileNotFoundException e){
+            throw new RuntimeException();
+        }catch (IOException e){
+            throw new RuntimeException();
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

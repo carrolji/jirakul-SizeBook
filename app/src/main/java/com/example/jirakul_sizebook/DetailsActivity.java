@@ -1,5 +1,6 @@
 package com.example.jirakul_sizebook;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,7 +23,6 @@ import static com.example.jirakul_sizebook.R.styleable.FloatingActionButton;
 public class DetailsActivity extends AppCompatActivity {
 
     private Button saveData;
-    private SharedPreferences savednotes;
     private EditText nameEditText;
     private EditText dateEditText;
     private EditText neckEditText;
@@ -51,38 +51,33 @@ public class DetailsActivity extends AppCompatActivity {
         commentEditText = (EditText) findViewById(R.id.edit_comment);
 
         saveData = (Button) findViewById(R.id.save_data);
-        savednotes = getSharedPreferences("notes",MODE_PRIVATE);
-
-        nameEditText.setText(savednotes.getString("tag","date"));
-        neckEditText.setText(savednotes.getString("tag","neck"));
 
         saveData.setOnClickListener(saveButtonListener);
 
+
+
     }
 
-    private void makeTag(String tag){
-        String or = savednotes.getString(tag, null);
-        SharedPreferences.Editor preferencesEditor = savednotes.edit();
-        preferencesEditor.putString("tag",tag); //change this line to this
-        preferencesEditor.commit();
-    }
 
-    String random = "John";
     public View.OnClickListener saveButtonListener = new View.OnClickListener(){
 
         @Override
         public void onClick(View v) {
-            if(nameEditText.getText().length()>0){
-                makeTag(nameEditText.getText().toString());
 
-                ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(nameEditText.getWindowToken(),0);
+            Contact contact = new Contact(nameEditText.getText().toString());
+            contact.set_name(nameEditText.getText().toString());
+            contact.set_bust(bustEditText.getText().toString());
+            contact.set_chest(chestEditText.getText().toString());
+            contact.set_date(dateEditText.getText().toString());
+            contact.set_comment(commentEditText.getText().toString());
+            contact.set_neck(neckEditText.getText().toString());
+            contact.set_waist(waistEditText.getText().toString());
+            contact.set_inseam(inseamEditText.getText().toString());
 
-            }
-            Intent intent = new Intent(getBaseContext(),MainActivity.class);
-            intent.putExtra("SearchText",random);
-            startActivity(intent);
-
-            //finish();
+            Intent intent = new Intent();
+            intent.putExtra("SearchText",contact);
+            setResult(Activity.RESULT_OK,intent);
+            finish();
 
         }
     };
