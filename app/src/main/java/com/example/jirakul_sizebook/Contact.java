@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 
 public class Contact implements Serializable {
+    private static final long serialVersionUID = 1;
     private String _name,_date,_comment,_neck,_bust,_chest,_waist,_hip,_inseam;
 
 
@@ -85,4 +86,7 @@ public class Contact implements Serializable {
     public String get_inseam() {
         return _inseam;
     }
+
+    @Override
+    public String toString(){return _name;}
 }

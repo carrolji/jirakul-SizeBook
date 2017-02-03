@@ -42,9 +42,9 @@ import static com.example.jirakul_sizebook.R.styleable.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private static final String FILENAME = "file.sav";
-    private EditText editText;
-    private ListView nameListView;
-    private ArrayList<Contact> listItems;
+    private EditText bodyText;
+    private ListView oldTweetsList;
+    private ArrayList<Contact> tweetList;
     private ArrayAdapter<Contact> adapter;
 
     @Override
@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        editText = (EditText) findViewById(R.id.editText);
-        nameListView = (ListView) findViewById(R.id.listView);
-        listItems = new ArrayList<Contact>();
-        adapter = new ArrayAdapter<Contact>(this,android.R.layout.simple_expandable_list_item_1,listItems);
-        nameListView.setAdapter(adapter);
+        bodyText = (EditText) findViewById(R.id.editText);
+        oldTweetsList = (ListView) findViewById(R.id.listView);
+        tweetList = new ArrayList<Contact>();
+        //adapter = new ArrayAdapter<Contact>(this,android.R.layout.list_item,listItems);
+        //nameListView.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
@@ -66,11 +66,16 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                setResult(RESULT_OK);
+                String text = bodyText.getText().toString();
+                Contact contact = new Contact(text);
+                tweetList.add(contact);
+                adapter.notifyDataSetChanged();
+                saveInFile();
                 /*listItems.add(editText.getText().toString());
                 adapter.notifyDataSetChanged();*/
-                Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
-                startActivity(intent);
+                /*Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
+                startActivity(intent);*/
 
             }
         });
@@ -84,11 +89,11 @@ public class MainActivity extends AppCompatActivity {
         }*/
 
 
-        nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        oldTweetsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent appInfo = new Intent(MainActivity.this, DetailsActivity.class);
-                startActivity(appInfo);
+                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -97,36 +102,39 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        Intent i = new Intent(this, DetailsActivity.class);
+        Intent i = new Intent(MainActivity.this, DetailsActivity.class);
         startActivityForResult(i,1);
 
         if (requestCode ==1){
             if(resultCode == Activity.RESULT_OK){
-                final String result = data.getStringExtra("result");
+                Contact contact = (Contact)data.getExtras().getSerializable("result");
+                tweetList.add(contact);
+                adapter.notifyDataSetChanged();
+                //saveInFile();
 
             }
         }
     }
 
-/*
+
     @Override
     protected void onStart(){
         super.onStart();
         loadFromFile();
-        //adapter = new ArrayAdapter<Contact>(this,R.layout.list_item,listItems);
-        //nameListView.setAdapter(adapter);
-    }*/
+        adapter = new ArrayAdapter<Contact>(this,
+                R.layout.list_item, tweetList);
+        oldTweetsList.setAdapter(adapter);
+    }
 
     private void loadFromFile(){
         try {
             FileInputStream fis = openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
             Gson gson = new Gson();
-            Type listType = new TypeToken<ArrayList<Contact>>() {
-            }.getType();
-            listItems = gson.fromJson(in, listType);
+            tweetList = gson.fromJson(in, new TypeToken<ArrayList<Contact>>(){}.getType());
+            fis.close();
         }catch(FileNotFoundException e){
-            listItems = new ArrayList<Contact>();
+            tweetList = new ArrayList<Contact>();
         }catch(IOException e){
             throw new RuntimeException();
         }
@@ -139,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
 
             Gson gson = new Gson();
-            gson.toJson(listItems,out);
+            gson.toJson(tweetList,out);
             out.flush();
             fos.close();
         }catch(FileNotFoundException e){
