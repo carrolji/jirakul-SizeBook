@@ -19,13 +19,14 @@ public class Contact implements Serializable{
     private String _comment;
 
     public Contact (String name, String date,
-                    String neck, String bust, String chest, String waist, String inseam,String comment) {
+                    String neck, String bust, String chest, String waist,String hip, String inseam,String comment) {
 
         _name = name;
         _bust = bust;
         _chest = chest;
         _waist = waist;
         _inseam = inseam;
+        _hip = hip;
         _date = date;
         _neck = neck;
         _comment = comment;

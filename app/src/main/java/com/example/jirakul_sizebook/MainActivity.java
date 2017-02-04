@@ -50,6 +50,7 @@ public class MainActivity extends Activity {
     EditText nameTxt, dateTxt;
     EditText neckTxt, bustTxt,chestTxt,waistTxt,inseamTxt;
     EditText commentTxt;
+    EditText hipTxt;
     List<Contact> contactsList = new ArrayList<Contact>();
     ListView contactListView;
     int longClickedItemIndex;
@@ -67,6 +68,7 @@ public class MainActivity extends Activity {
         bustTxt = (EditText) findViewById(R.id.txtBust);
         chestTxt = (EditText) findViewById(R.id.txtChest);
         waistTxt = (EditText) findViewById(R.id.txtWaist);
+        hipTxt = (EditText) findViewById(R.id.txtHip);
         inseamTxt = (EditText) findViewById(R.id.txtInseam);
         neckTxt = (EditText) findViewById(R.id.txtNeck);
         commentTxt = (EditText) findViewById(R.id.txtComment);
@@ -108,7 +110,7 @@ public class MainActivity extends Activity {
                 
                 contactsList.add(new Contact(nameTxt.getText().toString(),dateTxt.getText().toString()
                         ,neckTxt.getText().toString(),bustTxt.getText().toString()
-                ,chestTxt.getText().toString(),waistTxt.getText().toString(),inseamTxt.getText().toString(),
+                ,chestTxt.getText().toString(),waistTxt.getText().toString(),hipTxt.getText().toString(),inseamTxt.getText().toString(),
                         commentTxt.getText().toString()));
                 showTotalRecord();
                 saveInFile();
