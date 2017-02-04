@@ -49,6 +49,7 @@ public class MainActivity extends Activity {
 
     EditText nameTxt, dateTxt;
     EditText neckTxt, bustTxt,chestTxt,waistTxt,inseamTxt;
+    EditText commentTxt;
     List<Contact> contactsList = new ArrayList<Contact>();
     ListView contactListView;
     int longClickedItemIndex;
@@ -68,6 +69,7 @@ public class MainActivity extends Activity {
         waistTxt = (EditText) findViewById(R.id.txtWaist);
         inseamTxt = (EditText) findViewById(R.id.txtInseam);
         neckTxt = (EditText) findViewById(R.id.txtNeck);
+        commentTxt = (EditText) findViewById(R.id.txtComment);
 
         //assignListView
         contactListView = (ListView) findViewById(R.id.listView);
@@ -106,7 +108,8 @@ public class MainActivity extends Activity {
                 
                 contactsList.add(new Contact(nameTxt.getText().toString(),dateTxt.getText().toString()
                         ,neckTxt.getText().toString(),bustTxt.getText().toString()
-                ,chestTxt.getText().toString(),waistTxt.getText().toString(),inseamTxt.getText().toString()));
+                ,chestTxt.getText().toString(),waistTxt.getText().toString(),inseamTxt.getText().toString(),
+                        commentTxt.getText().toString()));
                 showTotalRecord();
                 saveInFile();
                 Toast.makeText(getApplicationContext(),nameTxt.getText().toString() +" added",Toast.LENGTH_SHORT).show();

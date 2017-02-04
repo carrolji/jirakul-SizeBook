@@ -19,7 +19,7 @@ public class Contact implements Serializable{
     private String _comment;
 
     public Contact (String name, String date,
-                    String neck, String bust, String chest, String waist, String inseam) {
+                    String neck, String bust, String chest, String waist, String inseam,String comment) {
 
         _name = name;
         _bust = bust;
@@ -28,6 +28,7 @@ public class Contact implements Serializable{
         _inseam = inseam;
         _date = date;
         _neck = neck;
+        _comment = comment;
     }
     public String getName() {
         return _name;
