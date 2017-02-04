@@ -112,6 +112,7 @@ public class MainActivity extends Activity {
                         ,neckTxt.getText().toString(),bustTxt.getText().toString()
                 ,chestTxt.getText().toString(),waistTxt.getText().toString(),hipTxt.getText().toString(),inseamTxt.getText().toString()
                 ,commentTxt.getText().toString()));
+                contactAdapter.notifyDataSetChanged();
                 showTotalRecord();
                 saveInFile();
                 Toast.makeText(getApplicationContext(),nameTxt.getText().toString() +" added",Toast.LENGTH_SHORT).show();
