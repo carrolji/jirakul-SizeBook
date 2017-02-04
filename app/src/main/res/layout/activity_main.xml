@@ -65,8 +65,8 @@
                                     android:text="Name"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:paddingTop="20dp"
                                     android:paddingBottom="20dp"
+                                    android:paddingTop="5dp"
                                     android:textSize="20sp"
                                     style="@style/HeadColor"
                                     />
@@ -147,15 +147,16 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="269dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:padding="@dimen/activity_vertical_margin"
+                                android:paddingLeft="10dp"
                                 android:orientation="vertical">
+
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:paddingBottom="20dp"
                                     android:inputType="textPersonName"
+                                    android:paddingBottom="20dp"
                                     android:id="@+id/txtName"
                                     android:hint="Name"/>
 
