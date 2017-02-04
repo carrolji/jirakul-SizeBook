@@ -8,19 +8,26 @@ import java.io.Serializable;
 
 public class Contact implements Serializable{
 
-    private String _name, _date, _neck, _bust,_chest;
+    private String _name;
+    private String _date;
+    private String _neck;
+    private String _bust;
+    private String _chest;
     private String _waist;
     private String _hip;
     private String _inseam;
     private String _comment;
 
-    public Contact (String name, String bust, String chest, String waist, String inseam) {
+    public Contact (String name, String date,
+                    String neck, String bust, String chest, String waist, String inseam) {
 
         _name = name;
         _bust = bust;
         _chest = chest;
         _waist = waist;
         _inseam = inseam;
+        _date = date;
+        _neck = neck;
     }
     public String getName() {
         return _name;
