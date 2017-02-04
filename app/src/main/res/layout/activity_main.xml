@@ -231,8 +231,7 @@
                                         android:id="@+id/txtComment"
                                         android:paddingBottom="20dp"
                                         android:paddingTop="20dp"
-                                        android:hint="Comment"
-                                        android:inputType="number"/>
+                                        android:hint="Comment"/>
 
 
                                 </LinearLayout>
