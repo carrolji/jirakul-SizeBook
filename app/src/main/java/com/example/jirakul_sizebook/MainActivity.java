@@ -129,7 +129,7 @@ public class MainActivity extends Activity {
         contactListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent editIntent = new Intent(MainActivity.this,EditActivity.class);
+                Intent editIntent = new Intent(MainActivity.this,DetailsActivity.class);
                 editIntent.putExtra("position",position);
                 editIntent.putExtra("result",(Serializable) contactListView.getItemAtPosition(position));
                 startActivityForResult(editIntent,1);

@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
+        <TextView
             android:id="@+id/name"
             android:paddingTop="70dp"
             android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/black"
-            android:paddingLeft="30dp"
+            android:layout_gravity="center"
             android:hint="@string/edit_name"/>
 
 
@@ -52,6 +52,7 @@
                     android:paddingTop="10dp"
                     android:paddingBottom="20dp"
                     android:paddingRight="20dp"
+                    style="@style/HeadColor"
                     android:text="Date"/>
 
                 <TextView
@@ -61,6 +62,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:paddingRight="20dp"
+                    style="@style/HeadColor"
                     android:text="Neck"/>
 
                 <TextView
@@ -70,6 +72,7 @@
                     android:textSize="18sp"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
+                    style="@style/HeadColor"
                     android:paddingRight="20dp"
                     android:text="Bust"/>
 
@@ -81,6 +84,7 @@
                     android:textSize="18sp"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
+                    style="@style/HeadColor"
                     android:text="Chest"/>
 
                 <TextView
@@ -91,6 +95,7 @@
                     android:textSize="18sp"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
+                    style="@style/HeadColor"
                     android:text="Waist"/>
 
                 <TextView
@@ -101,6 +106,7 @@
                     android:textSize="18sp"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
+                    style="@style/HeadColor"
                     android:text="Hip"/>
 
                 <TextView
@@ -111,6 +117,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:paddingRight="20dp"
+                    style="@style/HeadColor"
                     android:text="Inseam" />
 
                 <TextView
@@ -121,6 +128,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:paddingRight="20dp"
+                    style="@style/HeadColor"
                     android:text="Comment"/>
 
             </LinearLayout>
@@ -130,67 +138,66 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <EditText android:id="@+id/edit_date"
-                    android:layout_weight="1"
+                <TextView android:id="@+id/edit_date"
+                    android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="20dp"
-                    android:inputType="date"
                     android:hint="@string/edit_date" />
 
-                    <EditText android:id="@+id/edit_neck"
-                        android:layout_weight="10"
+                    <TextView android:id="@+id/edit_neck"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp"
-                        android:inputType="number"
+                        android:textSize="20dp"
                         android:hint="@string/edit_neck"/>
 
-                <EditText android:id="@+id/edit_bust"
+                <TextView android:id="@+id/edit_bust"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="20dp"
                     android:paddingTop="20dp"
-                    android:inputType="number"
+                    android:textSize="20dp"
                     android:hint="@string/edit_bust" />
 
-                <EditText android:id="@+id/edit_chest"
+                <TextView android:id="@+id/edit_chest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
-                    android:inputType="number"
+                    android:textSize="20dp"
                     android:hint="@string/edit_chest" />
 
-                <EditText android:id="@+id/edit_waist"
+                <TextView android:id="@+id/edit_waist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
-                    android:inputType="number"
+                    android:textSize="20dp"
                     android:hint="@string/edit_waist" />
 
-                <EditText android:id="@+id/edit_hip"
+                <TextView android:id="@+id/edit_hip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
-                    android:inputType="number"
+                    android:textSize="20dp"
                     android:hint="@string/edit_hip" />
 
-                <EditText android:id="@+id/edit_inseam"
+                <TextView android:id="@+id/edit_inseam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
-                    android:inputType="number"
+                    android:textSize="20dp"
                     android:hint="@string/edit_inseam" />
 
-                <EditText android:id="@+id/edit_comment"
+                <TextView android:id="@+id/edit_comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
+                    android:textSize="20dp"
                     android:paddingBottom="20dp"
                     android:hint="@string/edit_comment" />
 
@@ -201,11 +208,10 @@
 
 
     <Button
-        android:id="@+id/save_data"
+        android:id="@+id/back_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Data"
-        android:onClick="saveData"/>
+        android:text="Back"/>
 
 
 </LinearLayout>

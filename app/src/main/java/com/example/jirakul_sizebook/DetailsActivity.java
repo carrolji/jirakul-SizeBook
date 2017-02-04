@@ -16,21 +16,32 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static com.example.jirakul_sizebook.R.styleable.FloatingActionButton;
 
 public class DetailsActivity extends AppCompatActivity {
 
-    private Button saveData;
-    private EditText nameEditText;
-    private EditText dateEditText;
-    private EditText neckEditText;
-    private EditText bustEditText;
-    private EditText chestEditText;
-    private EditText waistEditText;
-    private EditText hipEditText;
-    private EditText inseamEditText;
-    private EditText commentEditText;
+    private Button backButton;
+    protected TextView saveName;
+    protected TextView saveDate;
+    protected TextView saveNeck;
+    protected TextView saveBust;
+    protected TextView saveChest;
+    protected TextView saveWaist;
+    protected TextView saveHip;
+    protected TextView saveInseam;
+    protected TextView saveComment;
+
+    List<Contact> contactsList = new ArrayList<Contact>();
+
+    protected String oldName;
+    protected String oldDate;
+    protected String oldNeck;
+    protected String oldBust;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,20 +49,32 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-/*
-        nameEditText = (EditText) findViewById(R.id.name);
-        dateEditText = (EditText) findViewById(R.id.edit_date);
-        neckEditText = (EditText) findViewById(R.id.edit_neck);
-        bustEditText = (EditText) findViewById(R.id.edit_bust);
-        chestEditText  = (EditText) findViewById(R.id.edit_chest);
-        waistEditText = (EditText) findViewById(R.id.edit_waist);
-        hipEditText = (EditText) findViewById(R.id.edit_hip);
-        inseamEditText = (EditText) findViewById(R.id.edit_inseam);
-        commentEditText = (EditText) findViewById(R.id.edit_comment);
 
-        saveData = (Button) findViewById(R.id.save_data);
+        Contact contact = (Contact)getIntent().getSerializableExtra("result");
 
-        saveData.setOnClickListener(saveButtonListener);
+        saveName = (TextView) findViewById(R.id.name);
+        saveDate = (TextView) findViewById(R.id.edit_date);
+        saveNeck = (TextView) findViewById(R.id.edit_neck);
+        saveBust = (TextView) findViewById(R.id.edit_bust);
+        saveChest  = (TextView) findViewById(R.id.edit_chest);
+        saveWaist = (TextView) findViewById(R.id.edit_waist);
+        saveHip = (TextView) findViewById(R.id.edit_hip);
+        saveInseam = (TextView) findViewById(R.id.edit_inseam);
+        saveComment = (TextView) findViewById(R.id.edit_comment);
+
+        backButton = (Button) findViewById(R.id.back_button);
+
+        oldName = contact.getName();
+        oldDate = contact.getDate();
+        oldNeck = contact.getNeck();
+        oldBust = contact.getBust();
+
+        saveName.setText(oldName);
+        saveDate.setText(oldDate);
+        saveNeck.setText(oldNeck);
+        saveBust.setText(oldBust);
+
+        backButton.setOnClickListener(saveButtonListener);
 
 
 
@@ -62,23 +85,9 @@ public class DetailsActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-
-            //Contact contact = new Contact(nameEditText.getText().toString());
-            contact.set_name(nameEditText.getText().toString());
-            contact.set_bust(bustEditText.getText().toString());
-            contact.set_chest(chestEditText.getText().toString());
-            contact.set_date(dateEditText.getText().toString());
-            contact.set_comment(commentEditText.getText().toString());
-            contact.set_neck(neckEditText.getText().toString());
-            contact.set_waist(waistEditText.getText().toString());
-            contact.set_inseam(inseamEditText.getText().toString());
-
-            Intent intent = new Intent();
-            intent.putExtra("result",contact);
-            setResult(Activity.RESULT_OK,intent);
             finish();
 
-        }*/
+        }
     };
 
 
