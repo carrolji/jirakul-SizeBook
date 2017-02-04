@@ -107,9 +107,11 @@ public class MainActivity extends Activity {
         addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+
+                String date = dateTxt.getText().toString();
+                String neck = neckTxt.getText().toString();
                 
-                contactsList.add(new Contact(nameTxt.getText().toString(),dateTxt.getText().toString()
-                        ,neckTxt.getText().toString(),bustTxt.getText().toString()
+                contactsList.add(new Contact(nameTxt.getText().toString(),date, neck,bustTxt.getText().toString()
                 ,chestTxt.getText().toString(),waistTxt.getText().toString(),hipTxt.getText().toString(),inseamTxt.getText().toString()
                 ,commentTxt.getText().toString()));
                 contactAdapter.notifyDataSetChanged();
