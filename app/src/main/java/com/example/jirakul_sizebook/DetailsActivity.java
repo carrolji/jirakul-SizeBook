@@ -77,7 +77,7 @@ public class DetailsActivity extends AppCompatActivity {
         oldWaist = contact.getWaist();
         oldHip = contact.getHip();
         oldInseam = contact.getInseam();
-        oldChest = contact.getComment();
+        oldComment = contact.getComment();
 
         saveName.setText(oldName);
         saveDate.setText(oldDate);

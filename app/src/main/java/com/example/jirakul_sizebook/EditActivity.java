@@ -63,7 +63,6 @@ public class EditActivity extends AppCompatActivity {
         oldWaist = contact.getWaist();
         oldHip = contact.getHip();
         oldInseam = contact.getInseam();
-        oldComment = contact.getComment();
 
 
         nameTxt.setText(oldName);
@@ -95,7 +94,7 @@ public class EditActivity extends AppCompatActivity {
             String inseam = inseamTxt.getText().toString();
             String comment = commentTxt.getText().toString();
 
-            Contact contact = new Contact(name,date,neck,bust,chest,waist,hip,inseam,comment);
+            Contact contact = new Contact(name,date,neck,bust,chest,waist,hip,inseam);
             contact.set_name(name);
             contact.set_date(date);
             contact.set_neck(neck);
