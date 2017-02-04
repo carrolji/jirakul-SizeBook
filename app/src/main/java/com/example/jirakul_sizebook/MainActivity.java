@@ -121,8 +121,27 @@ public class MainActivity extends Activity {
                 String hip = hipTxt.getText().toString();
                 String inseam = inseamTxt.getText().toString();
                 String comment = commentTxt.getText().toString();
+                String error = "Enter inches in one decimal place";
 
-                if(!validateJavaDate(date)){
+                if(!isOneDecimal(bust)){
+                    bustTxt.setError(error);
+                }
+                else if(!isOneDecimal(neck)){
+                    neckTxt.setError(error);
+                }
+                else if(!isOneDecimal(chest)){
+                    chestTxt.setError(error);
+                }
+                else if(!isOneDecimal(waist)){
+                    waistTxt.setError(error);
+                }
+                else if(!isOneDecimal(hip)){
+                    hipTxt.setError(error);
+                }
+                else if(!isOneDecimal(inseam)){
+                    inseamTxt.setError(error);
+                }
+                else if(!validateJavaDate(date)){
                     dateTxt.setError("Date format invalid");
                 }
                 else {
@@ -168,6 +187,15 @@ public class MainActivity extends Activity {
 
 
     }
+
+    public static boolean isOneDecimal(String string) {
+        if(string.trim().equals("")){
+            return true;
+        }
+        return string.matches("^\\d+\\.\\d{1}$");
+
+    }
+
     //http://beginnersbook.com/2013/05/java-date-format-validation/
     //2017-02-04
 
