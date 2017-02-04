@@ -3,22 +3,21 @@ package com.example.jirakul_sizebook;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.telecom.Call;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.ContextMenu;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -26,6 +25,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -35,46 +36,40 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.lang.reflect.Type;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
-import static com.example.jirakul_sizebook.R.styleable.Toolbar;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private static final int EDIT = 0, DELETE = 1;
 
-    private static final String FILENAME = "file.sav";
+    //create new file
+    private static final String FILENAME = "file1.sav";
 
-    private EditText nameText;
-    private EditText dateText;
-    private EditText neckText;
-    private EditText bustText;
-
-    private ListView nameListView;
-    //List<Contact> nameArrayList = new ArrayList<Contact>();
-    private ArrayList<Contact> nameArrayList;
-    private ArrayAdapter<Contact> adapter;
+    EditText nameTxt, dateTxt, neckTxt, bustTxt;
+    List<Contact> contactsList = new ArrayList<Contact>();
+    ListView contactListView;
     int longClickedItemIndex;
+    ArrayAdapter<Contact> contactAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        nameText = (EditText) findViewById(R.id.nameTxt);
-        dateText = (EditText) findViewById(R.id.dateTxt);
-        neckText = (EditText) findViewById(R.id.neckTxt);
-        bustText = (EditText) findViewById(R.id.bustTxt);
-        nameListView = (ListView) findViewById(R.id.listView);
-        nameArrayList = new ArrayList<Contact>();
+        nameTxt = (EditText) findViewById(R.id.txtName);
+        dateTxt = (EditText) findViewById(R.id.txtDate);
+        neckTxt = (EditText) findViewById(R.id.txtNeck);
+        bustTxt = (EditText) findViewById(R.id.txtBust);
 
-        registerForContextMenu(nameListView);
-        nameListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        //assignListView
+        contactListView = (ListView) findViewById(R.id.listView);
+
+        registerForContextMenu(contactListView);
+        contactListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 longClickedItemIndex = position;
@@ -82,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
         // Adding Tab
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
 
@@ -97,59 +91,108 @@ public class MainActivity extends AppCompatActivity {
         tabSpec.setContent(R.id.tabContactList);
         tabSpec.setIndicator("List");
         tabHost.addTab(tabSpec);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
 
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        final Button addBtn = (Button) findViewById(R.id.btnAdd);
+        addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                setResult(RESULT_OK);
-                nameArrayList.add(new Contact(nameText.getText().toString(),dateText.getText().toString(),
-                        neckText.getText().toString(),bustText.getText().toString()));
+            public void onClick(View view){
+                contactsList.add(new Contact(nameTxt.getText().toString(),dateTxt.getText().toString(),
+                        neckTxt.getText().toString(),bustTxt.getText().toString()));
+                showTotalRecord();
                 saveInFile();
-                Toast.makeText(getApplicationContext(),nameText.getText().toString() +" added",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),nameTxt.getText().toString() +" added",Toast.LENGTH_SHORT).show();
 
             }
         });
 
-        nameListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        nameTxt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                addBtn.setEnabled(!nameTxt.getText().toString().trim().isEmpty());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        contactListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-                startActivity(intent);
+                Intent editIntent = new Intent(MainActivity.this,EditActivity.class);
+                editIntent.putExtra("position",position);
+                editIntent.putExtra("result",(Serializable) contactListView.getItemAtPosition(position));
+                startActivityForResult(editIntent,1);
+
             }
         });
 
+
+
     }
+
+    public void showTotalRecord() {
+
+        String message = "Total Records: " + contactListView.getAdapter().getCount();;
+        TextView totalRecordView = (TextView) findViewById(R.id.total_record);
+        totalRecordView.setText(message);
+    }
+
 
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu,view,menuInfo);
 
         menu.setHeaderIcon(R.drawable.edit_icon);
-        menu.setHeaderTitle("Options");
-        menu.add(Menu.NONE,EDIT,menu.NONE,"Edit Details");
-        menu.add(Menu.NONE,DELETE,menu.NONE,"Delete Details");
+        menu.setHeaderTitle("Contact Options");
+        menu.add(Menu.NONE,EDIT,menu.NONE,"Edit Contact");
+        menu.add(Menu.NONE,DELETE,menu.NONE,"Delete Contact");
     }
 
+    public boolean onContextItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case EDIT:
+                // Creates a new Intent to edit a contact
+                //setResult(RESULT_OK);
+                Intent editIntent = new Intent(MainActivity.this,EditActivity.class);
+                editIntent.putExtra("result",(Serializable) contactListView.getItemAtPosition(longClickedItemIndex));
+                startActivityForResult(editIntent,1);
+                saveInFile();
+                break;
+            case DELETE:
+                contactsList.remove(longClickedItemIndex);
+                contactAdapter.notifyDataSetChanged();
+                showTotalRecord();
+                saveInFile();
+                break;
+        }
+        return super.onContextItemSelected(item);
+    }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-
-        if (requestCode ==1){
-            if(resultCode == Activity.RESULT_OK){
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        if(requestCode ==1){
+            if(resultCode == MainActivity.RESULT_OK){
                 Contact contact = (Contact)data.getExtras().getSerializable("result");
                 int position = data.getIntExtra("position",-1);
-                nameArrayList.set(position,contact);
-                adapter.notifyDataSetChanged();
+                contactsList.set(position,contact);
+                contactAdapter.notifyDataSetChanged();
                 saveInFile();
-
             }
         }
     }
 
-    private class nameListAdapter extends ArrayAdapter<Contact> {
-        public nameListAdapter() {
-            super (MainActivity.this, R.layout.listview_item, nameArrayList);
+    private class ContactListAdapter extends ArrayAdapter<Contact> {
+        public ContactListAdapter() {
+            super (MainActivity.this, R.layout.listview_item, contactsList);
         }
 
         @Override
@@ -157,39 +200,39 @@ public class MainActivity extends AppCompatActivity {
             if (view == null)
                 view = getLayoutInflater().inflate(R.layout.listview_item, parent, false);
 
-            Contact currentName = nameArrayList.get(position);
+            Contact currentContact = contactsList.get(position);
 
             TextView name = (TextView) view.findViewById(R.id.contactName);
-            name.setText(currentName.get_name());
+            name.setText(currentContact.getName());
             TextView date = (TextView) view.findViewById(R.id.dateDisplay);
-            date.setText(currentName.get_date());
+            date.setText(currentContact.getDate());
             TextView neck = (TextView) view.findViewById(R.id.lv_neck);
-            neck.setText(currentName.get_neck());
+            neck.setText(currentContact.getNeck());
             TextView bust = (TextView) view.findViewById(R.id.lv_bust);
-            bust.setText(currentName.get_bust());
+            bust.setText(currentContact.getBust());
 
             return view;
         }
     }
-
-
     @Override
     protected void onStart(){
         super.onStart();
         loadFromFile();
-        adapter = new nameListAdapter();
-        nameListView.setAdapter(adapter);
+        contactAdapter = new ContactListAdapter();
+        contactListView.setAdapter(contactAdapter);
+        showTotalRecord();
     }
+
 
     private void loadFromFile(){
         try {
             FileInputStream fis = openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
             Gson gson = new Gson();
-            nameArrayList = gson.fromJson(in, new TypeToken<ArrayList<Contact>>(){}.getType());
+            contactsList = gson.fromJson(in, new TypeToken<ArrayList<Contact>>(){}.getType());
             fis.close();
         }catch(FileNotFoundException e){
-            nameArrayList = new ArrayList<Contact>();
+            contactsList = new ArrayList<Contact>();
         }catch(IOException e){
             throw new RuntimeException();
         }
@@ -202,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
 
             Gson gson = new Gson();
-            gson.toJson(nameArrayList,out);
+            gson.toJson(contactsList,out);
             out.flush();
             fos.close();
         }catch(FileNotFoundException e){
@@ -210,28 +253,6 @@ public class MainActivity extends AppCompatActivity {
         }catch (IOException e){
             throw new RuntimeException();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
 }

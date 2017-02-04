@@ -11,10 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.jirakul_sizebook.Contact;
-import com.example.jirakul_sizebook.MainActivity;
-import com.example.jirakul_sizebook.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,10 +41,10 @@ public class EditActivity extends AppCompatActivity {
         bustTxt = (EditText) findViewById(R.id.txtBustE);
 
         saveData = (Button) findViewById(R.id.btnAdd);
-        oldName = contact.get_name();
-        oldDate = contact.get_date();
-        oldNeck = contact.get_neck();
-        oldBust = contact.get_bust();
+        oldName = contact.getName();
+        oldDate = contact.getDate();
+        oldNeck = contact.getNeck();
+        oldBust = contact.getBust();
 
         nameTxt.setText(oldName);
         dateTxt.setText(oldDate);
@@ -90,5 +86,4 @@ public class EditActivity extends AppCompatActivity {
 
 
 }
-
 
