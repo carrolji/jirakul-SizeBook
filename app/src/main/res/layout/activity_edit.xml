@@ -20,6 +20,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Edit"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_red_dark"
         android:id="@+id/lblCreatorTitle"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"/>
