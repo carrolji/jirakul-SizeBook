@@ -153,7 +153,7 @@
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp"
                 android:hint="Neck"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"/>
 
             <EditText
                 android:layout_width="fill_parent"
@@ -162,7 +162,7 @@
                 android:paddingBottom="25dp"
                 android:paddingTop="20dp"
                 android:hint="Bust"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"/>
 
             <EditText
                 android:layout_width="fill_parent"
@@ -171,7 +171,7 @@
                 android:paddingBottom="25dp"
                 android:paddingTop="20dp"
                 android:hint="Chest"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"/>
 
             <EditText
                 android:layout_width="fill_parent"
@@ -180,7 +180,7 @@
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp"
                 android:hint="Waist"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"/>
 
             <EditText
                 android:layout_width="fill_parent"
@@ -188,6 +188,7 @@
                 android:id="@+id/txtHipE"
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp"
+                android:inputType="numberDecimal"
                 android:hint="Hip"/>
 
             <EditText
@@ -197,7 +198,7 @@
                 android:paddingBottom="25dp"
                 android:paddingTop="20dp"
                 android:hint="Inseam"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"/>
 
             <EditText
                 android:layout_width="fill_parent"

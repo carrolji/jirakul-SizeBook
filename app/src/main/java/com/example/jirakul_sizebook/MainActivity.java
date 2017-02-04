@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.DigitsKeyListener;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,7 +38,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends Activity {
@@ -117,12 +121,17 @@ public class MainActivity extends Activity {
                 String hip = hipTxt.getText().toString();
                 String inseam = inseamTxt.getText().toString();
                 String comment = commentTxt.getText().toString();
-                
-                contactsList.add(new Contact(name,date, neck,bust,chest,waist,hip,inseam,comment));
-                contactAdapter.notifyDataSetChanged();
-                showTotalRecord();
-                saveInFile();
-                Toast.makeText(getApplicationContext(),nameTxt.getText().toString() +" added",Toast.LENGTH_SHORT).show();
+
+                if(!validateJavaDate(date)){
+                    dateTxt.setError("Date format invalid");
+                }
+                else {
+                    contactsList.add(new Contact(name, date, neck, bust, chest, waist, hip, inseam, comment));
+                    contactAdapter.notifyDataSetChanged();
+                    showTotalRecord();
+                    saveInFile();
+                    Toast.makeText(getApplicationContext(), nameTxt.getText().toString() + " added", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -158,6 +167,26 @@ public class MainActivity extends Activity {
 
 
 
+    }
+    //http://beginnersbook.com/2013/05/java-date-format-validation/
+    //2017-02-04
+
+    public static boolean validateJavaDate(String strDate)
+    {
+    /* Check if date is 'null' */
+        if (strDate.trim().equals("")) { return true; }
+    /* Date is not 'null' */
+        else {
+        /* parse the string into date form */
+            try {
+                // Set Date format
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+                sdf.setLenient(false);
+                sdf.parse(strDate);
+            } catch (ParseException e) { return false; }
+        /* Return 'true' - since date is in valid format */
+            return true;
+        }
     }
 
     public void showTotalRecord() {

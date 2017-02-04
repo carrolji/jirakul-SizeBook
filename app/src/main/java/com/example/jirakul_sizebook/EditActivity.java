@@ -14,6 +14,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.jirakul_sizebook.MainActivity.validateJavaDate;
+
 public class EditActivity extends AppCompatActivity {
 
     List<Contact> contactsList = new ArrayList<Contact>();
@@ -96,24 +98,33 @@ public class EditActivity extends AppCompatActivity {
             String comment = commentTxt.getText().toString();
 
             Contact contact = new Contact(name,date,neck,bust,chest,waist,hip,inseam,comment);
-            contact.set_name(name);
-            contact.set_date(date);
-            contact.set_neck(neck);
-            contact.set_bust(bust);
-            contact.set_chest(chest);
-            contact.set_waist(waist);
-            contact.set_hip(hip);
-            contact.set_inseam(inseam);
-            contact.set_comment(comment);
 
-            Intent intent = new Intent();
-            Bundle bundle = getIntent().getExtras();
-            int position = bundle.getInt("position");
-            intent.putExtra("position",position);
-            intent.putExtra("result",contact);
-            setResult(MainActivity.RESULT_OK,intent);
-            Toast.makeText(getApplicationContext(),"Data updated",Toast.LENGTH_SHORT).show();
-            finish();
+            if(!validateJavaDate(date)){
+                dateTxt.setError("Date format invalid");
+            }
+            else{
+                contact.set_name(name);
+                contact.set_date(date);
+                contact.set_neck(neck);
+                contact.set_bust(bust);
+                contact.set_chest(chest);
+                contact.set_waist(waist);
+                contact.set_hip(hip);
+                contact.set_inseam(inseam);
+                contact.set_comment(comment);
+
+
+                Intent intent = new Intent();
+                Bundle bundle = getIntent().getExtras();
+                int position = bundle.getInt("position");
+                intent.putExtra("position",position);
+                intent.putExtra("result",contact);
+                setResult(MainActivity.RESULT_OK,intent);
+                Toast.makeText(getApplicationContext(),"Data updated",Toast.LENGTH_SHORT).show();
+                finish();
+
+
+            }
 
         }
     };

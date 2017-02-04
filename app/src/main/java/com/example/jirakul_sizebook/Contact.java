@@ -30,6 +30,7 @@ public class Contact implements Serializable{
         _date = date;
         _neck = neck;
         _comment = comment;
+
     }
     public String getName() {
         return _name;
