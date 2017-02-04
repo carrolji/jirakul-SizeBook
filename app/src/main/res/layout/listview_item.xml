@@ -22,23 +22,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date"
-            android:id="@+id/dateDisplay"
+            android:text="Bust"
+            android:id="@+id/lv_bust"
             android:layout_gravity="left|center_vertical"
             android:layout_marginTop="5dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Neck"
-            android:id="@+id/lv_neck"
+            android:text="Chest"
+            android:id="@+id/lv_chest"
             android:layout_gravity="left|center_vertical"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bust"
-            android:id="@+id/lv_bust"
+            android:text="Waist"
+            android:id="@+id/lv_waist"
+            android:layout_gravity="left|center_vertical"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inseam"
+            android:id="@+id/lv_inseam"
             android:layout_gravity="left|center_vertical"/>
     </LinearLayout>
 

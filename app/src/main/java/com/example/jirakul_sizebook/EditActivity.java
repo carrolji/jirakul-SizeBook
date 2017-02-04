@@ -95,7 +95,7 @@ public class EditActivity extends AppCompatActivity {
             String inseam = inseamTxt.getText().toString();
             String comment = commentTxt.getText().toString();
 
-            Contact contact = new Contact(name,date,neck,bust);
+            Contact contact = new Contact(name,bust,chest,waist,inseam);
             contact.set_name(name);
             contact.set_date(date);
             contact.set_neck(neck);

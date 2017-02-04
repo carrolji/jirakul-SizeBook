@@ -41,6 +41,11 @@ public class DetailsActivity extends AppCompatActivity {
     protected String oldDate;
     protected String oldNeck;
     protected String oldBust;
+    protected String oldChest;
+    protected String oldWaist;
+    protected String oldHip;
+    protected String oldInseam;
+    protected String oldComment;
 
 
     @Override
@@ -68,18 +73,25 @@ public class DetailsActivity extends AppCompatActivity {
         oldDate = contact.getDate();
         oldNeck = contact.getNeck();
         oldBust = contact.getBust();
+        oldChest = contact.getChest();
+        oldWaist = contact.getWaist();
+        oldHip = contact.getHip();
+        oldInseam = contact.getHip();
+        oldChest = contact.getComment();
 
         saveName.setText(oldName);
         saveDate.setText(oldDate);
         saveNeck.setText(oldNeck);
         saveBust.setText(oldBust);
+        saveChest.setText(oldChest);
+        saveWaist.setText(oldWaist);
+        saveHip.setText(oldHip);
+        saveInseam.setText(oldInseam);
+        saveComment.setText(oldComment);
 
         backButton.setOnClickListener(saveButtonListener);
 
-
-
     }
-
 
     public View.OnClickListener saveButtonListener = new View.OnClickListener(){
 

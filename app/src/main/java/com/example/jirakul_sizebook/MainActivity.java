@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
     //create new file
     private static final String FILENAME = "file1.sav";
 
-    EditText nameTxt, dateTxt, neckTxt, bustTxt;
+    EditText nameTxt, bustTxt,chestTxt,waistTxt,inseamTxt;
     List<Contact> contactsList = new ArrayList<Contact>();
     ListView contactListView;
     int longClickedItemIndex;
@@ -61,9 +61,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         nameTxt = (EditText) findViewById(R.id.txtName);
-        dateTxt = (EditText) findViewById(R.id.txtDate);
-        neckTxt = (EditText) findViewById(R.id.txtNeck);
         bustTxt = (EditText) findViewById(R.id.txtBust);
+        chestTxt = (EditText) findViewById(R.id.txtChest);
+        waistTxt = (EditText) findViewById(R.id.txtWaist);
+        inseamTxt = (EditText) findViewById(R.id.txtInseam);
 
         //assignListView
         contactListView = (ListView) findViewById(R.id.listView);
@@ -99,8 +100,8 @@ public class MainActivity extends Activity {
         addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                contactsList.add(new Contact(nameTxt.getText().toString(),dateTxt.getText().toString(),
-                        neckTxt.getText().toString(),bustTxt.getText().toString()));
+                contactsList.add(new Contact(nameTxt.getText().toString(),bustTxt.getText().toString()
+                ,chestTxt.getText().toString(),waistTxt.getText().toString(),inseamTxt.getText().toString()));
                 showTotalRecord();
                 saveInFile();
                 Toast.makeText(getApplicationContext(),nameTxt.getText().toString() +" added",Toast.LENGTH_SHORT).show();
@@ -205,12 +206,14 @@ public class MainActivity extends Activity {
 
             TextView name = (TextView) view.findViewById(R.id.contactName);
             name.setText(currentContact.getName());
-            TextView date = (TextView) view.findViewById(R.id.dateDisplay);
-            date.setText(currentContact.getDate());
-            TextView neck = (TextView) view.findViewById(R.id.lv_neck);
-            neck.setText(currentContact.getNeck());
             TextView bust = (TextView) view.findViewById(R.id.lv_bust);
             bust.setText(currentContact.getBust());
+            TextView chest = (TextView) view.findViewById(R.id.lv_chest);
+            chest.setText(currentContact.getChest());
+            TextView waist = (TextView) view.findViewById(R.id.lv_waist);
+            waist.setText(currentContact.getWaist());
+            TextView inseam = (TextView) view.findViewById(R.id.lv_inseam);
+            inseam.setText(currentContact.getInseam());
 
             return view;
         }

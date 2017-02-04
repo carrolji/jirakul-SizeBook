@@ -14,12 +14,13 @@ public class Contact implements Serializable{
     private String _inseam;
     private String _comment;
 
-    public Contact (String name, String date, String neck, String bust) {
+    public Contact (String name, String bust, String chest, String waist, String inseam) {
 
         _name = name;
-        _date = date;
-        _neck = neck;
         _bust = bust;
+        _chest = chest;
+        _waist = waist;
+        _inseam = inseam;
     }
     public String getName() {
         return _name;
