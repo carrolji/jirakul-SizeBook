@@ -21,12 +21,21 @@ public class EditActivity extends AppCompatActivity {
     private EditText dateTxt;
     private EditText neckTxt;
     private EditText bustTxt;
+    private EditText chestTxt;
+    private EditText waistTxt;
+    private EditText hipTxt;
+    private EditText inseamTxt;
+    private EditText commentTxt;
     private Button saveData;
     protected String oldName;
     protected String oldDate;
     protected String oldNeck;
     protected String oldBust;
-
+    protected String oldChest;
+    protected String oldWaist;
+    protected String oldHip;
+    protected String oldInseam;
+    protected String oldComment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,17 +48,33 @@ public class EditActivity extends AppCompatActivity {
         dateTxt = (EditText) findViewById(R.id.txtDateE);
         neckTxt = (EditText) findViewById(R.id.txtNeckE);
         bustTxt = (EditText) findViewById(R.id.txtBustE);
+        chestTxt = (EditText) findViewById(R.id.txtChestE);
+        waistTxt = (EditText) findViewById(R.id.txtWaistE);
+        hipTxt = (EditText) findViewById(R.id.txtHipE);
+        inseamTxt = (EditText) findViewById(R.id.txtInseamE);
+        commentTxt = (EditText) findViewById(R.id.txtCommentE);
 
         saveData = (Button) findViewById(R.id.btnAdd);
         oldName = contact.getName();
         oldDate = contact.getDate();
         oldNeck = contact.getNeck();
         oldBust = contact.getBust();
+        oldChest = contact.getChest();
+        oldWaist = contact.getWaist();
+        oldHip = contact.getHip();
+        oldInseam = contact.getHip();
+        oldChest = contact.getComment();
+
 
         nameTxt.setText(oldName);
         dateTxt.setText(oldDate);
         neckTxt.setText(oldNeck);
         bustTxt.setText(oldBust);
+        chestTxt.setText(oldChest);
+        waistTxt.setText(oldWaist);
+        hipTxt.setText(oldHip);
+        inseamTxt.setText(oldInseam);
+        commentTxt.setText(oldComment);
 
         saveData.setOnClickListener(saveButtonListener);
 

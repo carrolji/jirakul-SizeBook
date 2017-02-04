@@ -8,7 +8,11 @@ import java.io.Serializable;
 
 public class Contact implements Serializable{
 
-    private String _name, _date, _neck, _bust;
+    private String _name, _date, _neck, _bust,_chest;
+    private String _waist;
+    private String _hip;
+    private String _inseam;
+    private String _comment;
 
     public Contact (String name, String date, String neck, String bust) {
 
@@ -33,6 +37,26 @@ public class Contact implements Serializable{
         return _bust;
     }
 
+    public String getChest() {
+        return _chest;
+    }
+
+    public String getWaist() {
+        return _waist;
+    }
+
+    public String getHip() {
+        return _hip;
+    }
+
+    public String getInseam() {
+        return _inseam;
+    }
+
+    public String getComment() {
+        return _comment;
+    }
+
     public void set_name(String _name) {
         this._name = _name;
     }
@@ -47,5 +71,25 @@ public class Contact implements Serializable{
 
     public void set_bust(String _bust) {
         this._bust = _bust;
+    }
+
+    public void set_chest(String _chest) {
+        this._chest = _chest;
+    }
+
+    public void set_waist(String _waist) {
+        this._waist = _waist;
+    }
+
+    public void set_hip(String _hip) {
+        this._hip = _hip;
+    }
+
+    public void set_inseam(String _inseam) {
+        this._inseam = _inseam;
+    }
+
+    public void set_comment(String _comment) {
+        this._comment = _comment;
     }
 }
