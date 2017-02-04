@@ -89,12 +89,22 @@ public class EditActivity extends AppCompatActivity {
             String date =dateTxt.getText().toString();
             String neck = neckTxt.getText().toString();
             String bust =bustTxt.getText().toString();
+            String chest = chestTxt.getText().toString();
+            String waist = waistTxt.getText().toString();
+            String hip = hipTxt.getText().toString();
+            String inseam = inseamTxt.getText().toString();
+            String comment = commentTxt.getText().toString();
 
             Contact contact = new Contact(name,date,neck,bust);
             contact.set_name(name);
             contact.set_date(date);
             contact.set_neck(neck);
             contact.set_bust(bust);
+            contact.set_chest(chest);
+            contact.set_waist(waist);
+            contact.set_hip(hip);
+            contact.set_inseam(inseam);
+            contact.set_comment(comment);
 
             Intent intent = new Intent();
             Bundle bundle = getIntent().getExtras();
