@@ -17,7 +17,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
-import static com.example.jirakul_sizebook.R.id.editText;
 import static com.example.jirakul_sizebook.R.styleable.FloatingActionButton;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -39,7 +38,7 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+/*
         nameEditText = (EditText) findViewById(R.id.name);
         dateEditText = (EditText) findViewById(R.id.edit_date);
         neckEditText = (EditText) findViewById(R.id.edit_neck);
@@ -64,7 +63,7 @@ public class DetailsActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            Contact contact = new Contact(nameEditText.getText().toString());
+            //Contact contact = new Contact(nameEditText.getText().toString());
             contact.set_name(nameEditText.getText().toString());
             contact.set_bust(bustEditText.getText().toString());
             contact.set_chest(chestEditText.getText().toString());
@@ -79,7 +78,7 @@ public class DetailsActivity extends AppCompatActivity {
             setResult(Activity.RESULT_OK,intent);
             finish();
 
-        }
+        }*/
     };
 
 

@@ -7,12 +7,24 @@ import java.io.Serializable;
  */
 
 public class Contact implements Serializable {
-    private static final long serialVersionUID = 1;
-    private String _name,_date,_comment,_neck,_bust,_chest,_waist,_hip,_inseam;
+
+    private String _name;
+    private String _date;
+    private String _comment;
+    private String _neck;
+    private String _bust;
+    private String _chest;
+    private String _waist;
+    private String _hip;
+    private String _inseam;
 
 
-    public Contact(String _name) {
-        this._name = _name;
+    public Contact(String name, String date, String neck, String bust) {
+
+        _name = name;
+        _date = date;
+        _neck = neck;
+        _bust = bust;
     }
 
     public void set_name(String _name) {

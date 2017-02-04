@@ -69,13 +69,16 @@ public class EditActivity extends AppCompatActivity {
             String neck = neckTxt.getText().toString();
             String bust =bustTxt.getText().toString();
 
-            Contact contact = new Contact(name);
+            Contact contact = new Contact(name,date,neck,bust);
             contact.set_name(name);
             contact.set_date(date);
             contact.set_neck(neck);
             contact.set_bust(bust);
 
             Intent intent = new Intent();
+            Bundle bundle = getIntent().getExtras();
+            int position = bundle.getInt("position");
+            intent.putExtra("position",position);
             intent.putExtra("result",contact);
             setResult(MainActivity.RESULT_OK,intent);
             Toast.makeText(getApplicationContext(),"Data updated",Toast.LENGTH_SHORT).show();
@@ -87,4 +90,5 @@ public class EditActivity extends AppCompatActivity {
 
 
 }
+
 
