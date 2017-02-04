@@ -83,12 +83,12 @@ public class MainActivity extends Activity {
         tabHost.setup();
 
         TabHost.TabSpec tabSpec = tabHost.newTabSpec("list");
-        tabSpec.setContent(R.id.tabList);
+        tabSpec.setContent(R.id.tabContactList);
         tabSpec.setIndicator("List");
         tabHost.addTab(tabSpec);
 
         tabSpec = tabHost.newTabSpec("creator");
-        tabSpec.setContent(R.id.tabAdd);
+        tabSpec.setContent(R.id.tabCreator);
         tabSpec.setIndicator("Add");
         tabHost.addTab(tabSpec);
 

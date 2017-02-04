@@ -143,7 +143,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="20dp"
-                    android:hint="@string/edit_date" />
+                    android:hint="@string/n_a" />
 
                     <TextView android:id="@+id/edit_neck"
                         android:layout_width="wrap_content"
@@ -151,7 +151,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp"
                         android:textSize="20dp"
-                        android:hint="@string/edit_neck"/>
+                        android:hint="@string/n_a"/>
 
                 <TextView android:id="@+id/edit_bust"
                     android:layout_width="wrap_content"
@@ -159,7 +159,7 @@
                     android:paddingBottom="20dp"
                     android:paddingTop="20dp"
                     android:textSize="20dp"
-                    android:hint="@string/edit_bust" />
+                    android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_chest"
                     android:layout_width="wrap_content"
@@ -167,7 +167,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:textSize="20dp"
-                    android:hint="@string/edit_chest" />
+                    android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_waist"
                     android:layout_width="wrap_content"
@@ -175,7 +175,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:textSize="20dp"
-                    android:hint="@string/edit_waist" />
+                    android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_hip"
                     android:layout_width="wrap_content"
@@ -183,7 +183,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:textSize="20dp"
-                    android:hint="@string/edit_hip" />
+                    android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_inseam"
                     android:layout_width="wrap_content"
@@ -191,7 +191,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:textSize="20dp"
-                    android:hint="@string/edit_inseam" />
+                    android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_comment"
                     android:layout_width="wrap_content"
@@ -199,7 +199,7 @@
                     android:paddingTop="20dp"
                     android:textSize="20dp"
                     android:paddingBottom="20dp"
-                    android:hint="@string/edit_comment" />
+                    android:hint="@string/n_a" />
 
             </LinearLayout>
 
@@ -211,7 +211,9 @@
         android:id="@+id/back_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back"/>
+        android:background="#E57373"
+        android:textColor="@android:color/black"
+        android:text="Back to List"/>
 
 
 </LinearLayout>
