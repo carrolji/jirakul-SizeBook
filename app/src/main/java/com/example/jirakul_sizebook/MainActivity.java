@@ -108,12 +108,17 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view){
 
+                String name = nameTxt.getText().toString();
                 String date = dateTxt.getText().toString();
                 String neck = neckTxt.getText().toString();
+                String bust = bustTxt.getText().toString();
+                String chest = chestTxt.getText().toString();
+                String waist = waistTxt.getText().toString();
+                String hip = hipTxt.getText().toString();
+                String inseam = inseamTxt.getText().toString();
+                String comment = commentTxt.getText().toString();
                 
-                contactsList.add(new Contact(nameTxt.getText().toString(),date, neck,bustTxt.getText().toString()
-                ,chestTxt.getText().toString(),waistTxt.getText().toString(),hipTxt.getText().toString(),inseamTxt.getText().toString()
-                ,commentTxt.getText().toString()));
+                contactsList.add(new Contact(name,date, neck,bust,chest,waist,hip,inseam,comment));
                 contactAdapter.notifyDataSetChanged();
                 showTotalRecord();
                 saveInFile();
