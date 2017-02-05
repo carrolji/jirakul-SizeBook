@@ -139,6 +139,24 @@ public class EditActivity extends AppCompatActivity {
                 dateTxt.setError("Date format invalid");
             }
             else{
+                if(bust.matches("\\d+$")){
+                    bust = bust +".0";
+                }
+                if(neck.matches("\\d+$")){
+                    neck = neck +".0";
+                }
+                if(chest.matches("\\d+$")){
+                    chest = chest +".0";
+                }
+                if(waist.matches("\\d+$")){
+                    waist = waist +".0";
+                }
+                if(hip.matches("\\d+$")){
+                    hip = hip +".0";
+                }
+                if(inseam.matches("\\d+$")){
+                    inseam = inseam +".0";
+                }
                 contact.set_name(name);
                 contact.set_date(date);
                 contact.set_neck(neck);

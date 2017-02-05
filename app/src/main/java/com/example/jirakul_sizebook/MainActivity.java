@@ -109,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         final Button addBtn = (Button) findViewById(R.id.btnAdd);
         addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -148,6 +147,24 @@ public class MainActivity extends AppCompatActivity {
                     dateTxt.setError("Date format invalid");
                 }
                 else {
+                    if(bust.matches("\\d+$")){
+                        bust = bust +".0";
+                    }
+                    if(neck.matches("\\d+$")){
+                        neck = neck +".0";
+                    }
+                    if(chest.matches("\\d+$")){
+                        chest = chest +".0";
+                    }
+                    if(waist.matches("\\d+$")){
+                        waist = waist +".0";
+                    }
+                    if(hip.matches("\\d+$")){
+                        hip = hip +".0";
+                    }
+                    if(inseam.matches("\\d+$")){
+                        inseam = inseam +".0";
+                    }
                     contactsList.add(new Contact(name, date, neck, bust, chest, waist, hip, inseam, comment));
                     contactAdapter.notifyDataSetChanged();
                     showTotalRecord();
@@ -195,8 +212,13 @@ public class MainActivity extends AppCompatActivity {
         if(string.trim().equals("")){
             return true;
         }
+        // Check for whole number
+        //http://stackoverflow.com/questions/16331423/whats-the-java-regular-expression-for-an-only-integer-numbers-string
+        else if(string.matches("\\d+$")){
+            return true;
+        }
+        // Check for one decimal
         return string.matches("^\\d+\\.\\d{1}$");
-
     }
 
     //http://beginnersbook.com/2013/05/java-date-format-validation/
