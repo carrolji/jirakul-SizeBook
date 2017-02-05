@@ -287,13 +287,36 @@ public class MainActivity extends AppCompatActivity {
             TextView name = (TextView) view.findViewById(R.id.contactName);
             name.setText(currentContact.getName());
             TextView bust = (TextView) view.findViewById(R.id.lv_bust);
-            bust.setText("Bust: "+currentContact.getBust());
+            if(currentContact.getBust().equals("")){
+                bust.setText("");
+            }
+            else{
+                bust.setText("Bust: "+currentContact.getBust()+ "\t\t");
+            }
+
             TextView chest = (TextView) view.findViewById(R.id.lv_chest);
-            chest.setText("Chest: "+ currentContact.getChest());
+            if(currentContact.getChest().equals("")){
+                chest.setText("");
+            }
+            else{
+                chest.setText("Chest: "+ currentContact.getChest()+ "\t\t");
+            }
+
             TextView waist = (TextView) view.findViewById(R.id.lv_waist);
-            waist.setText("Waist: " + currentContact.getWaist());
+            if(currentContact.getWaist().equals("")){
+                waist.setText("");
+            }
+            else{
+                waist.setText("Waist: " + currentContact.getWaist()+ "\t\t");
+            }
+
             TextView inseam = (TextView) view.findViewById(R.id.lv_inseam);
-            inseam.setText("Inseam: " + currentContact.getInseam());
+            if(currentContact.getInseam().equals("")){
+                inseam.setText("");
+            }
+            else{
+                inseam.setText("Inseam: " + currentContact.getInseam());
+            }
 
             return view;
         }
