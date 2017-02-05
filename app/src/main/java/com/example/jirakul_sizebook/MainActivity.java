@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // Adding Tab
-        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+        final TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
 
         tabHost.setup();
 
@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
         tabSpec.setContent(R.id.tabCreator);
         tabSpec.setIndicator("Add");
         tabHost.addTab(tabSpec);
-
 
 
         final Button addBtn = (Button) findViewById(R.id.btnAdd);
@@ -170,6 +169,20 @@ public class MainActivity extends AppCompatActivity {
                     showTotalRecord();
                     saveInFile();
                     Toast.makeText(getApplicationContext(), nameTxt.getText().toString() + " added", Toast.LENGTH_SHORT).show();
+
+                    nameTxt.setText("");
+                    dateTxt.setText("");
+                    bustTxt.setText("");
+                    chestTxt.setText("");
+                    waistTxt.setText("");
+                    hipTxt.setText("");
+                    inseamTxt.setText("");
+                    neckTxt.setText("");
+                    commentTxt.setText("");
+
+                    tabHost.setCurrentTab(0);
+
+
                 }
 
             }
