@@ -205,7 +205,7 @@
                                         android:layout_width="fill_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/txtChest"
-                                        android:paddingBottom="25dp"
+                                        android:paddingBottom="20dp"
                                         android:paddingTop="20dp"
                                         android:hint="Chest circumference"
                                         android:inputType="numberDecimal"/>
@@ -232,7 +232,7 @@
                                         android:layout_width="fill_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/txtInseam"
-                                        android:paddingBottom="25dp"
+                                        android:paddingBottom="20dp"
                                         android:paddingTop="20dp"
                                         android:hint="Inseam circumference"
                                         android:inputType="numberDecimal"/>
@@ -295,7 +295,7 @@
                             <Button
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Save Data"
+                                android:text="Save Record"
                                 android:id="@+id/btnAdd"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="10dp"
