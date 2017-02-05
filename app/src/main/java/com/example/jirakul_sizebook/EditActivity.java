@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.jirakul_sizebook.MainActivity.isOneDecimal;
 import static com.example.jirakul_sizebook.MainActivity.validateJavaDate;
 
 public class EditActivity extends AppCompatActivity {
@@ -96,10 +97,29 @@ public class EditActivity extends AppCompatActivity {
             String hip = hipTxt.getText().toString();
             String inseam = inseamTxt.getText().toString();
             String comment = commentTxt.getText().toString();
+            String error = "Enter inches in one decimal place";
 
             Contact contact = new Contact(name,date,neck,bust,chest,waist,hip,inseam,comment);
 
-            if(!validateJavaDate(date)){
+            if(!isOneDecimal(bust)){
+                bustTxt.setError(error);
+            }
+            else if(!isOneDecimal(neck)){
+                neckTxt.setError(error);
+            }
+            else if(!isOneDecimal(chest)){
+                chestTxt.setError(error);
+            }
+            else if(!isOneDecimal(waist)){
+                waistTxt.setError(error);
+            }
+            else if(!isOneDecimal(hip)){
+                hipTxt.setError(error);
+            }
+            else if(!isOneDecimal(inseam)){
+                inseamTxt.setError(error);
+            }
+            else if(!validateJavaDate(date)){
                 dateTxt.setError("Date format invalid");
             }
             else{

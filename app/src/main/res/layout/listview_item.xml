@@ -16,7 +16,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Name"
             android:id="@+id/contactName"
-            android:textColor="@android:color/black"
+            android:textColor="#004D40"
             android:layout_gravity="left|center_vertical"/>
 
         <TextView

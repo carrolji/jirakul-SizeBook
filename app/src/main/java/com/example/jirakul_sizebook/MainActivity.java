@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
@@ -44,7 +45,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private static final int EDIT = 0, DELETE = 1;
 
@@ -66,6 +67,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         nameTxt = (EditText) findViewById(R.id.txtName);
         dateTxt = (EditText) findViewById(R.id.txtDate);
@@ -229,11 +232,13 @@ public class MainActivity extends Activity {
         super.onCreateContextMenu(menu,view,menuInfo);
 
         menu.setHeaderIcon(R.drawable.edit_icon);
-        menu.setHeaderTitle("Contact Options");
-        menu.add(Menu.NONE,EDIT,menu.NONE,"Edit Contact");
-        menu.add(Menu.NONE,DELETE,menu.NONE,"Delete Contact");
+        menu.setHeaderTitle("Record Options");
+        menu.add(Menu.NONE,EDIT,menu.NONE,"Edit Record");
+        menu.add(Menu.NONE,DELETE,menu.NONE,"Delete Record");
     }
 
+    // https://www.youtube.com/watch?v=1V2DBKZhi9Q&list=WL&index=234
+    // Jan 30
     public boolean onContextItemSelected(MenuItem item){
         switch (item.getItemId()){
             case EDIT:
