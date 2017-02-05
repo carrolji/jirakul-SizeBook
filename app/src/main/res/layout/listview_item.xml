@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Name"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:id="@+id/contactName"
             android:textColor="#004D40"
             android:paddingBottom="10dp"

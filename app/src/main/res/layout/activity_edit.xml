@@ -135,7 +135,7 @@
                 android:inputType="textPersonName"
                 android:paddingBottom="20dp"
                 android:id="@+id/txtNameE"
-                android:hint="Name"/>
+                android:hint="Enter Name"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -152,7 +152,7 @@
                 android:id="@+id/txtNeckE"
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp"
-                android:hint="Neck"
+                android:hint="Neck circumference"
                 android:inputType="numberDecimal"/>
 
             <EditText
@@ -161,7 +161,7 @@
                 android:id="@+id/txtBustE"
                 android:paddingBottom="25dp"
                 android:paddingTop="20dp"
-                android:hint="Bust"
+                android:hint="Bust circumference"
                 android:inputType="numberDecimal"/>
 
             <EditText
@@ -170,7 +170,7 @@
                 android:id="@+id/txtChestE"
                 android:paddingBottom="25dp"
                 android:paddingTop="20dp"
-                android:hint="Chest"
+                android:hint="Chest circumference"
                 android:inputType="numberDecimal"/>
 
             <EditText
@@ -179,7 +179,7 @@
                 android:id="@+id/txtWaistE"
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp"
-                android:hint="Waist"
+                android:hint="Waist circumference"
                 android:inputType="numberDecimal"/>
 
             <EditText
@@ -189,7 +189,7 @@
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp"
                 android:inputType="numberDecimal"
-                android:hint="Hip"/>
+                android:hint="Hip cirumference"/>
 
             <EditText
                 android:layout_width="fill_parent"
@@ -197,7 +197,7 @@
                 android:id="@+id/txtInseamE"
                 android:paddingBottom="25dp"
                 android:paddingTop="20dp"
-                android:hint="Inseam"
+                android:hint="Inseam circumference"
                 android:inputType="numberDecimal"/>
 
             <EditText
@@ -206,7 +206,7 @@
                 android:id="@+id/txtCommentE"
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp"
-                android:hint="Comment"/>
+                android:hint="Enter Comment"/>
 
 
         </LinearLayout>
