@@ -17,8 +17,14 @@ import java.util.List;
 import static com.example.jirakul_sizebook.MainActivity.isOneDecimal;
 import static com.example.jirakul_sizebook.MainActivity.validateJavaDate;
 
+/**
+ * The type Edit activity.
+ */
 public class EditActivity extends AppCompatActivity {
 
+    /**
+     * The Contacts list.
+     */
     List<Contact> contactsList = new ArrayList<Contact>();
     private EditText nameTxt;
     private EditText dateTxt;
@@ -30,14 +36,41 @@ public class EditActivity extends AppCompatActivity {
     private EditText inseamTxt;
     private EditText commentTxt;
     private Button saveData;
+    /**
+     * The Old name.
+     */
     protected String oldName;
+    /**
+     * The Old date.
+     */
     protected String oldDate;
+    /**
+     * The Old neck.
+     */
     protected String oldNeck;
+    /**
+     * The Old bust.
+     */
     protected String oldBust;
+    /**
+     * The Old chest.
+     */
     protected String oldChest;
+    /**
+     * The Old waist.
+     */
     protected String oldWaist;
+    /**
+     * The Old hip.
+     */
     protected String oldHip;
+    /**
+     * The Old inseam.
+     */
     protected String oldInseam;
+    /**
+     * The Old comment.
+     */
     protected String oldComment;
 
     @Override
@@ -100,6 +133,9 @@ public class EditActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * The Save button listener.
+     */
     public View.OnClickListener saveButtonListener = new View.OnClickListener(){
 
         @Override

@@ -45,6 +45,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * The type Main activity.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private static final int EDIT = 0, DELETE = 1;
@@ -52,13 +55,52 @@ public class MainActivity extends AppCompatActivity {
     //create new file
     private static final String FILENAME = "file1.sav";
 
-    EditText nameTxt, dateTxt;
-    EditText neckTxt, bustTxt,chestTxt,waistTxt,inseamTxt;
+    /**
+     * The Name txt.
+     */
+    EditText nameTxt, /**
+     * The Date txt.
+     */
+    dateTxt;
+    /**
+     * The Neck txt.
+     */
+    EditText neckTxt, /**
+     * The Bust txt.
+     */
+    bustTxt, /**
+     * The Chest txt.
+     */
+    chestTxt, /**
+     * The Waist txt.
+     */
+    waistTxt, /**
+     * The Inseam txt.
+     */
+    inseamTxt;
+    /**
+     * The Comment txt.
+     */
     EditText commentTxt;
+    /**
+     * The Hip txt.
+     */
     EditText hipTxt;
+    /**
+     * The Contacts list.
+     */
     List<Contact> contactsList = new ArrayList<Contact>();
+    /**
+     * The Contact list view.
+     */
     ListView contactListView;
+    /**
+     * The Long clicked item index.
+     */
     int longClickedItemIndex;
+    /**
+     * The Contact adapter.
+     */
     ArrayAdapter<Contact> contactAdapter;
 
 
@@ -221,6 +263,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Is one decimal boolean.
+     *
+     * @param string the string
+     * @return the boolean
+     */
     public static boolean isOneDecimal(String string) {
         if(string.trim().equals("")){
             return true;
@@ -237,6 +285,12 @@ public class MainActivity extends AppCompatActivity {
     //http://beginnersbook.com/2013/05/java-date-format-validation/
     //2017-02-04
 
+    /**
+     * Validate java date boolean.
+     *
+     * @param strDate the str date
+     * @return the boolean
+     */
     public static boolean validateJavaDate(String strDate)
     {
     /* Check if date is 'null' */
@@ -255,6 +309,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Show total record.
+     */
     public void showTotalRecord() {
 
         String message = "Total Records: " + contactListView.getAdapter().getCount();;
@@ -308,6 +365,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class ContactListAdapter extends ArrayAdapter<Contact> {
+        /**
+         * Instantiates a new Contact list adapter.
+         */
         public ContactListAdapter() {
             super (MainActivity.this, R.layout.listview_item, contactsList);
         }

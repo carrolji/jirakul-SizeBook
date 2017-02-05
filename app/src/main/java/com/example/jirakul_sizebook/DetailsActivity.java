@@ -22,29 +22,89 @@ import java.util.List;
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static com.example.jirakul_sizebook.R.styleable.FloatingActionButton;
 
+/**
+ * The type Details activity.
+ */
 public class DetailsActivity extends AppCompatActivity {
 
     private Button backButton;
+    /**
+     * The Save name.
+     */
     protected TextView saveName;
+    /**
+     * The Save date.
+     */
     protected TextView saveDate;
+    /**
+     * The Save neck.
+     */
     protected TextView saveNeck;
+    /**
+     * The Save bust.
+     */
     protected TextView saveBust;
+    /**
+     * The Save chest.
+     */
     protected TextView saveChest;
+    /**
+     * The Save waist.
+     */
     protected TextView saveWaist;
+    /**
+     * The Save hip.
+     */
     protected TextView saveHip;
+    /**
+     * The Save inseam.
+     */
     protected TextView saveInseam;
+    /**
+     * The Save comment.
+     */
     protected TextView saveComment;
 
+    /**
+     * The Contacts list.
+     */
     List<Contact> contactsList = new ArrayList<Contact>();
 
+    /**
+     * The Old name.
+     */
     protected String oldName;
+    /**
+     * The Old date.
+     */
     protected String oldDate;
+    /**
+     * The Old neck.
+     */
     protected String oldNeck;
+    /**
+     * The Old bust.
+     */
     protected String oldBust;
+    /**
+     * The Old chest.
+     */
     protected String oldChest;
+    /**
+     * The Old waist.
+     */
     protected String oldWaist;
+    /**
+     * The Old hip.
+     */
     protected String oldHip;
+    /**
+     * The Old inseam.
+     */
     protected String oldInseam;
+    /**
+     * The Old comment.
+     */
     protected String oldComment;
 
 
@@ -93,6 +153,9 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * The Save button listener.
+     */
     public View.OnClickListener saveButtonListener = new View.OnClickListener(){
 
         @Override
