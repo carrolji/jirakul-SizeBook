@@ -61,8 +61,7 @@
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="5dp"
+                                    android:paddingTop="10dp"
                                     android:orientation="vertical">
 
                                     <TextView
@@ -71,7 +70,7 @@
                                         android:layout_height="wrap_content"
                                         android:paddingBottom="20dp"
                                         android:paddingTop="5dp"
-                                        android:textSize="20sp"
+                                        android:textSize="18sp"
                                         style="@style/HeadColor"
                                         />
 
@@ -82,16 +81,16 @@
                                         android:paddingTop="20dp"
                                         android:paddingBottom="20dp"
                                         style="@style/HeadColor"
-                                        android:textSize="20sp"/>
+                                        android:textSize="18sp"/>
 
                                     <TextView
                                         android:text="Neck"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:paddingTop="10dp"
+                                        android:paddingTop="20dp"
                                         android:paddingBottom="20dp"
                                         style="@style/HeadColor"
-                                        android:textSize="20sp"/>
+                                        android:textSize="18sp"/>
 
                                     <TextView
                                         android:text="Bust"
@@ -100,7 +99,7 @@
                                         android:paddingTop="20dp"
                                         android:paddingBottom="20dp"
                                         style="@style/HeadColor"
-                                        android:textSize="20sp"/>
+                                        android:textSize="18sp"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -108,7 +107,7 @@
                                         android:text="Chest"
                                         android:paddingTop="20dp"
                                         android:paddingBottom="20dp"
-                                        android:textSize="20sp"
+                                        android:textSize="18sp"
                                         style="@style/HeadColor" />
 
                                     <TextView
@@ -117,7 +116,7 @@
                                         android:text="Waist"
                                         android:paddingTop="20dp"
                                         android:paddingBottom="20dp"
-                                        android:textSize="20sp"
+                                        android:textSize="18sp"
                                         style="@style/HeadColor"/>
 
                                     <TextView
@@ -126,7 +125,7 @@
                                         android:text="Hip"
                                         android:paddingTop="20dp"
                                         android:paddingBottom="20dp"
-                                        android:textSize="20sp"
+                                        android:textSize="18sp"
                                         style="@style/HeadColor"/>
 
                                     <TextView
@@ -135,7 +134,7 @@
                                         android:text="Inseam"
                                         android:paddingTop="20dp"
                                         android:paddingBottom="20dp"
-                                        android:textSize="20sp"
+                                        android:textSize="18sp"
                                         style="@style/HeadColor"/>
 
                                     <TextView
@@ -144,16 +143,17 @@
                                         android:text="Comment"
                                         android:paddingTop="20dp"
                                         android:paddingBottom="20dp"
-                                        android:textSize="20sp"
+                                        android:textSize="18sp"
                                         style="@style/HeadColor"/>
-
 
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:paddingLeft="10dp"
+                                    android:paddingRight="5dp"
                                     android:orientation="vertical">
 
                                     <EditText
@@ -236,6 +236,48 @@
                                         android:hint="Enter comment"/>
 
 
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingTop="150dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="inches"
+                                        style="@style/BodyColorT"
+                                        android:paddingBottom="50dp"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingBottom="45dp"
+                                        style="@style/BodyColorT"
+                                        android:text="inches"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingBottom="45dp"
+                                        style="@style/BodyColorT"
+                                        android:text="inches"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingBottom="45dp"
+                                        style="@style/BodyColorT"
+                                        android:text="inches"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingBottom="45dp"
+                                        style="@style/BodyColorT"
+                                        android:text="inches"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        style="@style/BodyColorT"
+                                        android:text="inches"/>
                                 </LinearLayout>
 
                             </LinearLayout>
