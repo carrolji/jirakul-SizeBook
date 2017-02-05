@@ -33,7 +33,6 @@
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             tools:context="com.example.jirakul_sizebook.DetailsActivity"
             android:background="@android:color/white"
@@ -51,8 +50,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="25dp"
                     android:paddingRight="20dp"
                     style="@style/HeadColor"
                     android:text="Date"/>
@@ -61,8 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
+                    android:paddingBottom="25dp"
                     android:paddingRight="20dp"
                     style="@style/HeadColor"
                     android:text="Neck"/>
@@ -72,8 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
+                    android:paddingBottom="25dp"
                     style="@style/HeadColor"
                     android:paddingRight="20dp"
                     android:text="Bust"/>
@@ -84,8 +81,7 @@
                     android:layout_height="wrap_content"
                     android:paddingRight="20dp"
                     android:textSize="18sp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
+                    android:paddingBottom="25dp"
                     style="@style/HeadColor"
                     android:text="Chest"/>
 
@@ -95,8 +91,7 @@
                     android:layout_height="wrap_content"
                     android:paddingRight="20dp"
                     android:textSize="18sp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
+                    android:paddingBottom="25dp"
                     style="@style/HeadColor"
                     android:text="Waist"/>
 
@@ -106,8 +101,7 @@
                     android:layout_height="wrap_content"
                     android:paddingRight="20dp"
                     android:textSize="18sp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
+                    android:paddingBottom="25dp"
                     style="@style/HeadColor"
                     android:text="Hip"/>
 
@@ -116,8 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
+                    android:paddingBottom="25dp"
                     android:paddingRight="20dp"
                     style="@style/HeadColor"
                     android:text="Inseam" />
@@ -127,8 +120,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
                     android:paddingRight="20dp"
                     style="@style/HeadColor"
                     android:text="Comment"/>
@@ -138,69 +129,71 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <TextView android:id="@+id/edit_date"
-                    android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="25dp"
+                    android:textSize="18dp"
+                    android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
-                    <TextView android:id="@+id/edit_neck"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="20dp"
-                        android:paddingBottom="20dp"
-                        android:textSize="20dp"
-                        android:hint="@string/n_a"/>
+                <TextView android:id="@+id/edit_neck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="25dp"
+                    android:textSize="18dp"
+                    android:textColor="#004D40"
+                    android:hint="@string/n_a"/>
 
                 <TextView android:id="@+id/edit_bust"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="20dp"
-                    android:paddingTop="20dp"
-                    android:textSize="20dp"
+                    android:paddingBottom="25dp"
+                    android:textSize="18dp"
+                    android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_chest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
-                    android:textSize="20dp"
+                    android:paddingBottom="25dp"
+                    android:textSize="18dp"
+                    android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_waist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
-                    android:textSize="20dp"
+                    android:paddingBottom="25dp"
+                    android:textSize="18dp"
+                    android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_hip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
-                    android:textSize="20dp"
+                    android:paddingBottom="25dp"
+                    android:textSize="18dp"
+                    android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_inseam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"
-                    android:textSize="20dp"
+                    android:paddingBottom="25dp"
+                    android:textSize="18dp"
+                    android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
-                    android:textSize="20dp"
-                    android:paddingBottom="20dp"
+                    android:textSize="18dp"
+                    android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
             </LinearLayout>
