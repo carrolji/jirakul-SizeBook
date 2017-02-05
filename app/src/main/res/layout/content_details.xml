@@ -140,6 +140,7 @@
                     android:paddingBottom="25dp"
                     android:textSize="18dp"
                     android:textColor="#004D40"
+                    android:layout_gravity="center_horizontal"
                     android:hint="@string/n_a" />
 
                 <TextView android:id="@+id/edit_neck"
@@ -148,6 +149,7 @@
                     android:paddingBottom="25dp"
                     android:textSize="18dp"
                     android:textColor="#004D40"
+                    android:layout_gravity="center_horizontal"
                     android:hint="@string/n_a"/>
 
                 <TextView android:id="@+id/edit_bust"
@@ -155,6 +157,7 @@
                     android:layout_height="wrap_content"
                     android:paddingBottom="25dp"
                     android:textSize="18dp"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
@@ -163,6 +166,7 @@
                     android:layout_height="wrap_content"
                     android:paddingBottom="25dp"
                     android:textSize="18dp"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
@@ -171,6 +175,7 @@
                     android:layout_height="wrap_content"
                     android:paddingBottom="25dp"
                     android:textSize="18dp"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
@@ -179,6 +184,7 @@
                     android:layout_height="wrap_content"
                     android:paddingBottom="25dp"
                     android:textSize="18dp"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
@@ -187,6 +193,7 @@
                     android:layout_height="wrap_content"
                     android:paddingBottom="25dp"
                     android:textSize="18dp"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
@@ -194,6 +201,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dp"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="#004D40"
                     android:hint="@string/n_a" />
 
