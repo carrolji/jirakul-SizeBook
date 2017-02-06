@@ -37,10 +37,12 @@ Specifically, each person has a record with the following fields:
 * Stackoverflow:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://stackoverflow.com/questions/9114912/what-is-context-menu-method-registerforcontextmenu . 
-Accessed 31 January. 2017
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessed 31 January. 2017
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://stackoverflow.com/questions/10407159/how-to-manage-startactivityforresult-on-android
-Accessed 31 January. 2017
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessed 31 January. 2017
 
 * BeginnersBook:
 
