@@ -160,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 /**
                  * Validate user input
                  */
+
                 if(!isOneDecimal(bust)){
                     bustTxt.setError(error);
                 }
