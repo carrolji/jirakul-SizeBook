@@ -122,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
 
         /**
          * Setting up Tab bar
+         * Taken from: // https://www.youtube.com/watch?v=1V2DBKZhi9Q&list=WL&index=234
+         * 2017-01-30
          */
         final TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
 
@@ -217,7 +219,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        /**
+         * Add button is enabled when user input Name
+         */
         nameTxt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -235,6 +239,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * View the record when the person is clicked in the listView
+         * Create new intent, and pass the position and the object
+         */
         contactListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -258,30 +266,30 @@ public class MainActivity extends AppCompatActivity {
      * @return the boolean
      */
     public static boolean isOneDecimal(String strInt) {
-        if (strInt.trim().equals("")) {
+        if(strInt.trim().equals("")){
             return true;
         }
-        //http://stackoverflow.com/questions/16331423/whats-the-java-regular-expression-for-an-only-integer-numbers-string
-        else if (strInt.matches("\\d+$")) {
+
+        else if(strInt.matches("\\d+$")){
             return true;
         }
 
         return strInt.matches("^\\d+\\.\\d{1}$");
     }
 
-    //http://beginnersbook.com/2013/05/java-date-format-validation/
-    //2017-02-04
-
     /**
      * Validate date format.
      * return true if the string is empty
+     * Taken from: http://beginnersbook.com/2013/05/java-date-format-validation/
+     * 2017-02-04
      * @param strDate the str date
      * @return the boolean
      */
     public static boolean validateJavaDate(String strDate) {
-    /* Check if date is 'null' */
-        if (strDate.trim().equals("")) { return true; }
-    /* Date is not 'null' */
+        if (strDate.trim().equals("")) {
+            return true;
+        }
+
         else {
         /* parse the string into date form */
             try {
@@ -312,13 +320,17 @@ public class MainActivity extends AppCompatActivity {
         menu.add(Menu.NONE,DELETE,menu.NONE,"Delete Record");
     }
 
-    // https://www.youtube.com/watch?v=1V2DBKZhi9Q&list=WL&index=234
-    // Jan 30
+
+    /**
+     * Display Edit and Delete record when long click on list item
+     *
+     * @param item
+     * @return
+     */
     public boolean onContextItemSelected(MenuItem item){
         switch (item.getItemId()){
             case EDIT:
                 // Creates a new Intent to edit a contact
-                //setResult(RESULT_OK);
                 Intent editIntent = new Intent(MainActivity.this,EditActivity.class);
                 editIntent.putExtra("position",longClickedItemIndex);
                 editIntent.putExtra("result",(Serializable) contactListView.getItemAtPosition(longClickedItemIndex));
@@ -335,6 +347,13 @@ public class MainActivity extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
+    /**
+     * Get position and contact object from EditActivity,
+     * update adapter and save the file.
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
         if(requestCode ==1){
@@ -348,6 +367,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Create Adapter
+     */
     private class ContactListAdapter extends ArrayAdapter<Contact> {
         /**
          * Instantiates a new Contact list adapter.
@@ -363,6 +385,9 @@ public class MainActivity extends AppCompatActivity {
 
             Contact currentContact = contactsList.get(position);
 
+            /**
+             * Display Name, bust, chest, waist in listView.
+             */
             TextView name = (TextView) view.findViewById(R.id.contactName);
             name.setText(currentContact.getName());
             TextView bust = (TextView) view.findViewById(R.id.lv_bust);
@@ -400,6 +425,12 @@ public class MainActivity extends AppCompatActivity {
             return view;
         }
     }
+
+    /**
+     * Load file,
+     * initialized adapter and listView,
+     * display number of record.
+     */
     @Override
     protected void onStart(){
         super.onStart();
