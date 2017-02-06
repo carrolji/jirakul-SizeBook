@@ -3,45 +3,46 @@ package com.example.jirakul_sizebook;
 import java.io.Serializable;
 
 /**
- * Created by carrotji on 2017-02-01.
+ * The type Contact.
  */
 public class Contact implements Serializable{
 
-    private String _name;
-    private String _date;
-    private String _neck;
-    private String _bust;
-    private String _chest;
-    private String _waist;
-    private String _hip;
-    private String _inseam;
-    private String _comment;
+    private String name;
+    private String date;
+    private String neck;
+    private String bust;
+    private String chest;
+    private String waist;
+    private String hip;
+    private String inseam;
+    private String comment;
 
     /**
      * Instantiates a new Contact.
      *
-     * @param name    the name
-     * @param date    the date
-     * @param neck    the neck
-     * @param bust    the bust
-     * @param chest   the chest
-     * @param waist   the waist
-     * @param hip     the hip
-     * @param inseam  the inseam
-     * @param comment the comment
+     * @param nameContact    the name contact
+     * @param dateContact    the date contact
+     * @param neckContact    the neck contact
+     * @param bustContact    the bust contact
+     * @param chestContact   the chest contact
+     * @param waistContact   the waist contact
+     * @param hipContact     the hip contact
+     * @param inseamContact  the inseam contact
+     * @param commentContact the comment contact
      */
-    public Contact (String name, String date,
-                    String neck, String bust, String chest, String waist,String hip, String inseam,String comment) {
+    public Contact (String nameContact, String dateContact, String neckContact
+                    , String bustContact, String chestContact, String waistContact
+                    , String hipContact, String inseamContact,String commentContact) {
 
-        _name = name;
-        _bust = bust;
-        _chest = chest;
-        _waist = waist;
-        _inseam = inseam;
-        _hip = hip;
-        _date = date;
-        _neck = neck;
-        _comment = comment;
+        name = nameContact;
+        bust = bustContact;
+        chest = chestContact;
+        waist = waistContact;
+        inseam = inseamContact;
+        hip = hipContact;
+        date = dateContact;
+        neck = neckContact;
+        comment = commentContact;
 
     }
 
@@ -51,7 +52,7 @@ public class Contact implements Serializable{
      * @return the name
      */
     public String getName() {
-        return _name;
+        return name;
     }
 
     /**
@@ -60,7 +61,7 @@ public class Contact implements Serializable{
      * @return the date
      */
     public String getDate() {
-        return _date;
+        return date;
     }
 
     /**
@@ -69,7 +70,7 @@ public class Contact implements Serializable{
      * @return the neck
      */
     public String getNeck() {
-        return _neck;
+        return neck;
     }
 
     /**
@@ -78,7 +79,7 @@ public class Contact implements Serializable{
      * @return the bust
      */
     public String getBust() {
-        return _bust;
+        return bust;
     }
 
     /**
@@ -87,7 +88,7 @@ public class Contact implements Serializable{
      * @return the chest
      */
     public String getChest() {
-        return _chest;
+        return chest;
     }
 
     /**
@@ -96,7 +97,7 @@ public class Contact implements Serializable{
      * @return the waist
      */
     public String getWaist() {
-        return _waist;
+        return waist;
     }
 
     /**
@@ -105,7 +106,7 @@ public class Contact implements Serializable{
      * @return the hip
      */
     public String getHip() {
-        return _hip;
+        return hip;
     }
 
     /**
@@ -114,7 +115,7 @@ public class Contact implements Serializable{
      * @return the inseam
      */
     public String getInseam() {
-        return _inseam;
+        return inseam;
     }
 
     /**
@@ -123,7 +124,7 @@ public class Contact implements Serializable{
      * @return the comment
      */
     public String getComment() {
-        return _comment;
+        return comment;
     }
 
     /**
@@ -132,7 +133,7 @@ public class Contact implements Serializable{
      * @param _name the name
      */
     public void set_name(String _name) {
-        this._name = _name;
+        this.name = _name;
     }
 
     /**
@@ -141,7 +142,7 @@ public class Contact implements Serializable{
      * @param _date the date
      */
     public void set_date(String _date) {
-        this._date = _date;
+        this.date = _date;
     }
 
     /**
@@ -150,7 +151,7 @@ public class Contact implements Serializable{
      * @param _neck the neck
      */
     public void set_neck(String _neck) {
-        this._neck = _neck;
+        this.neck = _neck;
     }
 
     /**
@@ -159,7 +160,7 @@ public class Contact implements Serializable{
      * @param _bust the bust
      */
     public void set_bust(String _bust) {
-        this._bust = _bust;
+        this.bust = _bust;
     }
 
     /**
@@ -168,7 +169,7 @@ public class Contact implements Serializable{
      * @param _chest the chest
      */
     public void set_chest(String _chest) {
-        this._chest = _chest;
+        this.chest = _chest;
     }
 
     /**
@@ -177,7 +178,7 @@ public class Contact implements Serializable{
      * @param _waist the waist
      */
     public void set_waist(String _waist) {
-        this._waist = _waist;
+        this.waist = _waist;
     }
 
     /**
@@ -186,7 +187,7 @@ public class Contact implements Serializable{
      * @param _hip the hip
      */
     public void set_hip(String _hip) {
-        this._hip = _hip;
+        this.hip = _hip;
     }
 
     /**
@@ -195,7 +196,7 @@ public class Contact implements Serializable{
      * @param _inseam the inseam
      */
     public void set_inseam(String _inseam) {
-        this._inseam = _inseam;
+        this.inseam = _inseam;
     }
 
     /**
@@ -204,6 +205,6 @@ public class Contact implements Serializable{
      * @param _comment the comment
      */
     public void set_comment(String _comment) {
-        this._comment = _comment;
+        this.comment = _comment;
     }
 }

@@ -1,44 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="24"
+    api-level="23"
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="63777576681449"
+    timestamp="73441514357040"
     token="-8379893245379827852"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="313" />
+        duration="803" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="78" />
+        duration="1210" />
     <task
         name="verifier"
-        duration="13" />
+        duration="178" />
 
     <artifact
-        location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
-        type="DEX" />
+        location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="62177557534996"
-        verifier="MANIFEST_FILE_CHANGE" >
+        timestamp="73441514357040"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="63777576681449"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>
