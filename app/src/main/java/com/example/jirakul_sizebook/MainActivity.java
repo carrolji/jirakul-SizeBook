@@ -323,7 +323,6 @@ public class MainActivity extends AppCompatActivity {
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu,view,menuInfo);
 
-        menu.setHeaderIcon(R.drawable.edit_icon);
         menu.setHeaderTitle("Record Options");
         menu.add(Menu.NONE,EDIT,menu.NONE,"Edit Record");
         menu.add(Menu.NONE,DELETE,menu.NONE,"Delete Record");
