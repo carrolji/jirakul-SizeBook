@@ -1,5 +1,5 @@
 # jirakul-SizeBook
-cmput 301 assignment1 \n
+cmput 301 assignment1 
 Demonstration of the app: https://www.youtube.com/watch?v=V1uXKtBUlZg
 
 Problem Description
