@@ -12,15 +12,15 @@ Also, set aside the broader matter of mapping dimensions to properly fitting clo
 
 Specifically, each person has a record with the following fields:
 
-> name (textual)
-*date (when the dimensions were reasonably valid, in yyyy-mm-dd format)
-*neck (circumference in inches, numeric)
-*bust (circumference in inches, numeric)
-*chest (circumference in inches, numeric)
-*waist (circumference in inches, numeric)
-*hip (circumference in inches, numeric)
-*inseam (length in inches, numeric)
-*comment (textual)
+* name (textual)
+* date (when the dimensions were reasonably valid, in yyyy-mm-dd format)
+* neck (circumference in inches, numeric)
+* bust (circumference in inches, numeric)
+* chest (circumference in inches, numeric)
+* waist (circumference in inches, numeric)
+* hip (circumference in inches, numeric)
+* inseam (length in inches, numeric)
+* comment (textual)
 
 Sources citation:
 Johnny Manson
