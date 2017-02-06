@@ -5,26 +5,26 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="80851896029723"
+    timestamp="84425405286175"
     token="-8379893245379827852"
-    verifier="METHOD_DELETED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="341" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="103" />
+        duration="0" />
     <task
         name="verifier"
-        duration="17" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
-        type="DEX" />
+        location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
 
     <build
         timestamp="73441514357040"
@@ -34,18 +34,18 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="78084246232524"
-        verifier="METHOD_DELETED" >
-        <artifact
-            location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="80851896029723"
-        verifier="METHOD_DELETED" >
+        timestamp="84386799356932"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
             type="DEX" />
+    </build>
+    <build
+        timestamp="84425405286175"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

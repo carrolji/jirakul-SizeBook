@@ -21,6 +21,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -160,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
                 /**
                  * Validate user input
                  */
-
                 if(!isOneDecimal(bust)){
                     bustTxt.setError(error);
                 }
