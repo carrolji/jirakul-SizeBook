@@ -138,7 +138,11 @@ public class MainActivity extends AppCompatActivity {
         tabSpec.setIndicator("Add");
         tabHost.addTab(tabSpec);
 
-
+        /**
+         * Validate user input, add to contact object
+         * save into record, update record number
+         * and return to main tab.
+         */
         final Button addBtn = (Button) findViewById(R.id.btnAdd);
         addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -155,6 +159,9 @@ public class MainActivity extends AppCompatActivity {
                 String comment = commentTxt.getText().toString();
                 String error = "Enter inches in one decimal place";
 
+                /**
+                 * Validate user input
+                 */
                 if(!isOneDecimal(bust)){
                     bustTxt.setError(error);
                 }
@@ -201,10 +208,11 @@ public class MainActivity extends AppCompatActivity {
                     saveInFile();
                     Toast.makeText(getApplicationContext(), nameTxt.getText().toString() + " added", Toast.LENGTH_SHORT).show();
 
+                    /* empty EditText */
                     nameTxt.setText("");
                     dateTxt.setText("");
                     bustTxt.setText("");
-                    //chestTxt.setText("");
+                    chestTxt.setText("");
                     waistTxt.setText("");
                     hipTxt.setText("");
                     inseamTxt.setText("");
@@ -212,7 +220,6 @@ public class MainActivity extends AppCompatActivity {
                     commentTxt.setText("");
 
                     tabHost.setCurrentTab(0);
-
 
                 }
 
@@ -253,8 +260,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
 
     }
 
@@ -312,7 +317,12 @@ public class MainActivity extends AppCompatActivity {
         totalRecordView.setText(message);
     }
 
-
+    /**
+     *
+     * @param menu
+     * @param view
+     * @param menuInfo
+     */
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu,view,menuInfo);
         menu.setHeaderTitle("Record Options");
@@ -444,6 +454,7 @@ public class MainActivity extends AppCompatActivity {
      * Loads contacts from file.
      * @exception FileNotFoundException if the file is not created
      * @exception IOException if input or output fails
+     * Taken from: lonelyTwitter
      */
     private void loadFromFile(){
         try {
