@@ -24,18 +24,17 @@ Specifically, each person has a record with the following fields:
 * comment (textual)
 
 ***
-
 ## Sources citation:
 
-Johnny Manson
+* Johnny Manson
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.youtube.com/watch?v=1V2DBKZhi9Q&list=WL&index=234 . Accessed 30 January. 2017
 
-301 Lab lonelyTwitter
+* 301 Lab lonelyTwitter
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://github.com/carrolji/lonelyTwitter.git . Accessed 30 January.2017
 
-Stackoverflow:
+* Stackoverflow:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://stackoverflow.com/questions/9114912/what-is-context-menu-method-registerforcontextmenu . 
 Accessed 31 January. 2017
@@ -43,6 +42,6 @@ Accessed 31 January. 2017
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://stackoverflow.com/questions/10407159/how-to-manage-startactivityforresult-on-android
 Accessed 31 January. 2017
 
-BeginnersBook:
+* BeginnersBook:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://beginnersbook.com/2013/05/java-date-format-validation/ . Accessced 04 April. 2017
