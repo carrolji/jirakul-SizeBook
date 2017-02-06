@@ -253,35 +253,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Is one decimal boolean.
-     *
-     * @param string the string
+     * Check if the string contains one decimal number
+     * return true if string is empty
+     * return true if string is whole number
+     * @param strInt the string
      * @return the boolean
      */
-    public static boolean isOneDecimal(String string) {
-        if(string.trim().equals("")){
+    public static boolean isOneDecimal(String strInt) {
+        if (strInt.trim().equals("")) {
             return true;
         }
-        // Check for whole number
         //http://stackoverflow.com/questions/16331423/whats-the-java-regular-expression-for-an-only-integer-numbers-string
-        else if(string.matches("\\d+$")){
+        else if (strInt.matches("\\d+$")) {
             return true;
         }
-        // Check for one decimal
-        return string.matches("^\\d+\\.\\d{1}$");
+
+        return strInt.matches("^\\d+\\.\\d{1}$");
     }
 
     //http://beginnersbook.com/2013/05/java-date-format-validation/
     //2017-02-04
 
     /**
-     * Validate java date boolean.
-     *
+     * Validate date format.
+     * return true if the string is empty
      * @param strDate the str date
      * @return the boolean
      */
-    public static boolean validateJavaDate(String strDate)
-    {
+    public static boolean validateJavaDate(String strDate) {
     /* Check if date is 'null' */
         if (strDate.trim().equals("")) { return true; }
     /* Date is not 'null' */
@@ -299,10 +298,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Show total record.
+     * Show total number of record.
      */
     public void showTotalRecord() {
-
         String message = "Total Records: " + contactListView.getAdapter().getCount();;
         TextView totalRecordView = (TextView) findViewById(R.id.total_record);
         totalRecordView.setText(message);
@@ -311,7 +309,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu,view,menuInfo);
-
         menu.setHeaderTitle("Record Options");
         menu.add(Menu.NONE,EDIT,menu.NONE,"Edit Record");
         menu.add(Menu.NONE,DELETE,menu.NONE,"Delete Record");
