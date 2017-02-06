@@ -1,5 +1,5 @@
 # jirakul-SizeBook
-# cmput 301 assignment1 
+# CMPUT301 Assignment1 
 
 Demonstration of the app: https://www.youtube.com/watch?v=V1uXKtBUlZg
 
@@ -23,7 +23,9 @@ Specifically, each person has a record with the following fields:
 * inseam (length in inches, numeric)
 * comment (textual)
 
-Sources citation:
+***
+
+## Sources citation:
 
 Johnny Manson
 
