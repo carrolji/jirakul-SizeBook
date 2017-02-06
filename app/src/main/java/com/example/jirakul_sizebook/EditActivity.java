@@ -26,6 +26,7 @@ public class EditActivity extends AppCompatActivity {
      * The Contacts list.
      */
     List<Contact> contactsList = new ArrayList<Contact>();
+
     private EditText nameTxt;
     private EditText dateTxt;
     private EditText neckTxt;
@@ -35,42 +36,17 @@ public class EditActivity extends AppCompatActivity {
     private EditText hipTxt;
     private EditText inseamTxt;
     private EditText commentTxt;
+
     private Button saveData;
-    /**
-     * The Old name.
-     */
+
     protected String oldName;
-    /**
-     * The Old date.
-     */
     protected String oldDate;
-    /**
-     * The Old neck.
-     */
     protected String oldNeck;
-    /**
-     * The Old bust.
-     */
     protected String oldBust;
-    /**
-     * The Old chest.
-     */
     protected String oldChest;
-    /**
-     * The Old waist.
-     */
     protected String oldWaist;
-    /**
-     * The Old hip.
-     */
     protected String oldHip;
-    /**
-     * The Old inseam.
-     */
     protected String oldInseam;
-    /**
-     * The Old comment.
-     */
     protected String oldComment;
 
     @Override
@@ -90,7 +66,6 @@ public class EditActivity extends AppCompatActivity {
         inseamTxt = (EditText) findViewById(R.id.txtInseamE);
         commentTxt = (EditText) findViewById(R.id.txtCommentE);
 
-        saveData = (Button) findViewById(R.id.btnAdd);
         oldName = contact.getName();
         oldDate = contact.getDate();
         oldNeck = contact.getNeck();
@@ -100,7 +75,6 @@ public class EditActivity extends AppCompatActivity {
         oldHip = contact.getHip();
         oldInseam = contact.getInseam();
         oldComment = contact.getComment();
-
 
         nameTxt.setText(oldName);
         dateTxt.setText(oldDate);
@@ -112,7 +86,13 @@ public class EditActivity extends AppCompatActivity {
         inseamTxt.setText(oldInseam);
         commentTxt.setText(oldComment);
 
+        saveData = (Button) findViewById(R.id.btnAdd);
         saveData.setOnClickListener(saveButtonListener);
+
+        /**
+         * SaveData Button is enabled when user
+         * enter Name into the Record.
+         */
         nameTxt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -151,8 +131,14 @@ public class EditActivity extends AppCompatActivity {
             String comment = commentTxt.getText().toString();
             String error = "Enter inches in one decimal place";
 
+            /**
+             * Initialized Contact class
+             */
             Contact contact = new Contact(name,date,neck,bust,chest,waist,hip,inseam,comment);
 
+            /**
+             * Validate user input
+             */
             if(!isOneDecimal(bust)){
                 bustTxt.setError(error);
             }
@@ -193,6 +179,10 @@ public class EditActivity extends AppCompatActivity {
                 if(inseam.matches("\\d+$")){
                     inseam = inseam +".0";
                 }
+
+                /**
+                 * Set new information to contact object
+                 */
                 contact.set_name(name);
                 contact.set_date(date);
                 contact.set_neck(neck);
@@ -203,7 +193,10 @@ public class EditActivity extends AppCompatActivity {
                 contact.set_inseam(inseam);
                 contact.set_comment(comment);
 
-
+                /**
+                 * Return position and contact object to
+                 * MainActivity when the saveButton is clicked.
+                 */
                 Intent intent = new Intent();
                 Bundle bundle = getIntent().getExtras();
                 int position = bundle.getInt("position");
