@@ -49,10 +49,7 @@ public class DetailsActivity extends AppCompatActivity {
     protected String oldInseam;
     protected String oldComment;
 
-    /**
-     * The Contacts list.
-     */
-    List<Contact> contactsList = new ArrayList<Contact>();
+    //List<Contact> contactsList = new ArrayList<Contact>();
 
 
     @Override
@@ -62,9 +59,7 @@ public class DetailsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /**
-         * Get Serializable key from the MainActivity
-         */
+        /* Get Serializable key from the MainActivity */
         Contact contact = (Contact)getIntent().getSerializableExtra("result");
 
         saveName = (TextView) findViewById(R.id.name);
@@ -79,9 +74,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         backButton = (Button) findViewById(R.id.back_button);
 
-        /**
-         * Get contact object
-         */
+        /* Get contact object */
         oldName = contact.getName();
         oldDate = contact.getDate();
         oldNeck = contact.getNeck();
@@ -92,9 +85,7 @@ public class DetailsActivity extends AppCompatActivity {
         oldInseam = contact.getInseam();
         oldComment = contact.getComment();
 
-        /**
-         * Display contact object in TextView
-         */
+        /* Display contact object in TextView */
         saveName.setText(oldName);
         saveDate.setText(oldDate);
         saveNeck.setText(oldNeck);

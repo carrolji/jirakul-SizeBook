@@ -22,9 +22,7 @@ import static com.example.jirakul_sizebook.MainActivity.validateJavaDate;
  */
 public class EditActivity extends AppCompatActivity {
 
-    /**
-     * The Contacts list.
-     */
+    /* The Contacts list. */
     List<Contact> contactsList = new ArrayList<Contact>();
 
     private EditText nameTxt;
@@ -89,10 +87,7 @@ public class EditActivity extends AppCompatActivity {
         saveData = (Button) findViewById(R.id.btnAdd);
         saveData.setOnClickListener(saveButtonListener);
 
-        /**
-         * SaveData Button is enabled when user
-         * enter Name into the Record.
-         */
+        /* SaveData Button is enabled when user enter Name into the Record. */
         nameTxt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -114,7 +109,7 @@ public class EditActivity extends AppCompatActivity {
     }
 
     /**
-     * The Save button listener.
+     * The Save button listener. Update record.
      */
     public View.OnClickListener saveButtonListener = new View.OnClickListener(){
 
@@ -131,14 +126,10 @@ public class EditActivity extends AppCompatActivity {
             String comment = commentTxt.getText().toString();
             String error = "Enter inches in one decimal place";
 
-            /**
-             * Initialized Contact class
-             */
+            /* Initialized Contact class */
             Contact contact = new Contact(name,date,neck,bust,chest,waist,hip,inseam,comment);
 
-            /**
-             * Validate user input
-             */
+            /* Validate user input */
             if(!isOneDecimal(bust)){
                 bustTxt.setError(error);
             }
@@ -180,9 +171,7 @@ public class EditActivity extends AppCompatActivity {
                     inseam = inseam +".0";
                 }
 
-                /**
-                 * Set new information to contact object
-                 */
+                /* Set new information to contact object */
                 contact.set_name(name);
                 contact.set_date(date);
                 contact.set_neck(neck);
@@ -193,16 +182,15 @@ public class EditActivity extends AppCompatActivity {
                 contact.set_inseam(inseam);
                 contact.set_comment(comment);
 
-                /**
-                 * Return position and contact object to
-                 * MainActivity when the saveButton is clicked.
-                 */
+                /* Return position and contact object to MainActivity  */
                 Intent intent = new Intent();
                 Bundle bundle = getIntent().getExtras();
                 int position = bundle.getInt("position");
                 intent.putExtra("position",position);
                 intent.putExtra("result",contact);
                 setResult(MainActivity.RESULT_OK,intent);
+
+                /* Pop up text */
                 Toast.makeText(getApplicationContext(),"Data updated",Toast.LENGTH_SHORT).show();
                 finish();
 
