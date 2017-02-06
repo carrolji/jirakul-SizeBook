@@ -35,10 +35,6 @@
                     android:layout_height="wrap_content">
                 </TabWidget>
 
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
                     <FrameLayout
                         android:id="@android:id/tabcontent"
                         android:layout_width="match_parent"
@@ -51,257 +47,270 @@
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:text="Add Record"
-                                android:textColor="@android:color/holo_red_dark"
-                                android:textStyle="bold"
-                                android:id="@+id/lblCreatorTitle"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="10dp"/>
-
-                            <LinearLayout
+                            <ScrollView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:orientation="horizontal">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:paddingTop="10dp"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:text="Name"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:paddingBottom="20dp"
-                                        android:paddingTop="5dp"
-                                        android:textSize="18sp"
-                                        style="@style/HeadColor"
-                                        />
-
-                                    <TextView
-                                        android:text="Date"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:paddingTop="20dp"
-                                        android:paddingBottom="20dp"
-                                        style="@style/HeadColor"
-                                        android:textSize="18sp"/>
-
-                                    <TextView
-                                        android:text="Neck"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:paddingTop="20dp"
-                                        android:paddingBottom="20dp"
-                                        style="@style/HeadColor"
-                                        android:textSize="18sp"/>
-
-                                    <TextView
-                                        android:text="Bust"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:paddingTop="20dp"
-                                        android:paddingBottom="20dp"
-                                        style="@style/HeadColor"
-                                        android:textSize="18sp"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Chest"
-                                        android:paddingTop="20dp"
-                                        android:paddingBottom="20dp"
-                                        android:textSize="18sp"
-                                        style="@style/HeadColor" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Waist"
-                                        android:paddingTop="20dp"
-                                        android:paddingBottom="20dp"
-                                        android:textSize="18sp"
-                                        style="@style/HeadColor"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Hip"
-                                        android:paddingTop="20dp"
-                                        android:paddingBottom="20dp"
-                                        android:textSize="18sp"
-                                        style="@style/HeadColor"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Inseam"
-                                        android:paddingTop="20dp"
-                                        android:paddingBottom="20dp"
-                                        android:textSize="18sp"
-                                        style="@style/HeadColor"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Comment"
-                                        android:paddingTop="20dp"
-                                        android:paddingBottom="20dp"
-                                        android:textSize="18sp"
-                                        style="@style/HeadColor"/>
-
-                                </LinearLayout>
+                                android:layout_height="match_parent">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:paddingLeft="10dp"
-                                    android:paddingRight="5dp"
+                                    android:layout_height="match_parent"
                                     android:orientation="vertical">
 
-                                    <EditText
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textAppearance="?android:attr/textAppearanceLarge"
+                                        android:text="Add Record"
+                                        android:textColor="@android:color/holo_red_dark"
+                                        android:textStyle="bold"
+                                        android:id="@+id/lblCreatorTitle"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="10dp"/>
+
+
+
+                                    <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:inputType="textPersonName"
-                                        android:paddingBottom="20dp"
-                                        android:id="@+id/txtName"
-                                        android:hint="Enter Name"/>
+                                        android:padding="8dp"
+                                        android:orientation="horizontal">
 
-                                    <EditText
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:inputType="date"
-                                        android:id="@+id/txtDate"
-                                        android:paddingTop="20dp"
-                                        android:paddingBottom="20dp"
-                                        android:hint="yyyy-mm-dd"/>
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:paddingTop="10dp"
+                                            android:orientation="vertical">
 
-                                    <EditText
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/txtNeck"
-                                        android:paddingBottom="20dp"
-                                        android:paddingTop="20dp"
-                                        android:hint="Neck circumference"
-                                        android:inputType="numberDecimal"/>
+                                            <TextView
+                                                android:text="Name"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingBottom="20dp"
+                                                android:paddingTop="5dp"
+                                                android:textSize="18sp"
+                                                style="@style/HeadColor"
+                                                />
 
-                                    <EditText
+                                            <TextView
+                                                android:text="Date"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingTop="20dp"
+                                                android:paddingBottom="20dp"
+                                                style="@style/HeadColor"
+                                                android:textSize="18sp"/>
+
+                                            <TextView
+                                                android:text="Neck"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingTop="20dp"
+                                                android:paddingBottom="20dp"
+                                                style="@style/HeadColor"
+                                                android:textSize="18sp"/>
+
+                                            <TextView
+                                                android:text="Bust"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingTop="20dp"
+                                                android:paddingBottom="20dp"
+                                                style="@style/HeadColor"
+                                                android:textSize="18sp"/>
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Chest"
+                                                android:paddingTop="20dp"
+                                                android:paddingBottom="20dp"
+                                                android:textSize="18sp"
+                                                style="@style/HeadColor" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Waist"
+                                                android:paddingTop="20dp"
+                                                android:paddingBottom="20dp"
+                                                android:textSize="18sp"
+                                                style="@style/HeadColor"/>
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Hip"
+                                                android:paddingTop="20dp"
+                                                android:paddingBottom="20dp"
+                                                android:textSize="18sp"
+                                                style="@style/HeadColor"/>
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Inseam"
+                                                android:paddingTop="20dp"
+                                                android:paddingBottom="20dp"
+                                                android:textSize="18sp"
+                                                style="@style/HeadColor"/>
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Comment"
+                                                android:paddingTop="20dp"
+                                                android:paddingBottom="20dp"
+                                                android:textSize="18sp"
+                                                style="@style/HeadColor"/>
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingLeft="10dp"
+                                            android:paddingRight="5dp"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:inputType="textPersonName"
+                                                android:paddingBottom="20dp"
+                                                android:id="@+id/txtName"
+                                                android:hint="Enter Name"/>
+
+                                            <EditText
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:inputType="date"
+                                                android:id="@+id/txtDate"
+                                                android:paddingTop="20dp"
+                                                android:paddingBottom="20dp"
+                                                android:hint="yyyy-mm-dd"/>
+
+                                            <EditText
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/txtNeck"
+                                                android:paddingBottom="20dp"
+                                                android:paddingTop="20dp"
+                                                android:hint="Neck circumference"
+                                                android:inputType="numberDecimal"/>
+
+                                            <EditText
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/txtBust"
+                                                android:paddingBottom="25dp"
+                                                android:paddingTop="20dp"
+                                                android:hint="Bust circuference"
+                                                android:inputType="numberDecimal"/>
+
+                                            <EditText
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/txtChest"
+                                                android:paddingBottom="20dp"
+                                                android:paddingTop="20dp"
+                                                android:hint="Chest circumference"
+                                                android:inputType="numberDecimal"/>
+
+                                            <EditText
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/txtWaist"
+                                                android:paddingBottom="20dp"
+                                                android:paddingTop="20dp"
+                                                android:hint="Waist circumference"
+                                                android:inputType="numberDecimal"/>
+
+                                            <EditText
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/txtHip"
+                                                android:paddingBottom="20dp"
+                                                android:paddingTop="20dp"
+                                                android:inputType="numberDecimal"
+                                                android:hint="Hip circumference"/>
+
+                                            <EditText
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/txtInseam"
+                                                android:paddingBottom="20dp"
+                                                android:paddingTop="20dp"
+                                                android:hint="Inseam circumference"
+                                                android:inputType="numberDecimal"/>
+
+                                            <EditText
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/txtComment"
+                                                android:paddingBottom="20dp"
+                                                android:paddingTop="20dp"
+                                                android:hint="Enter comment"/>
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:paddingTop="150dp">
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="inches"
+                                                style="@style/BodyColorT"
+                                                android:paddingBottom="50dp"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingBottom="45dp"
+                                                style="@style/BodyColorT"
+                                                android:text="inches"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingBottom="45dp"
+                                                style="@style/BodyColorT"
+                                                android:text="inches"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingBottom="45dp"
+                                                style="@style/BodyColorT"
+                                                android:text="inches"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingBottom="45dp"
+                                                style="@style/BodyColorT"
+                                                android:text="inches"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                style="@style/BodyColorT"
+                                                android:text="inches"/>
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                    <Button
                                         android:layout_width="fill_parent"
                                         android:layout_height="wrap_content"
-                                        android:id="@+id/txtBust"
-                                        android:paddingBottom="25dp"
-                                        android:paddingTop="20dp"
-                                        android:hint="Bust circuference"
-                                        android:inputType="numberDecimal"/>
-
-                                    <EditText
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/txtChest"
-                                        android:paddingBottom="20dp"
-                                        android:paddingTop="20dp"
-                                        android:hint="Chest circumference"
-                                        android:inputType="numberDecimal"/>
-
-                                    <EditText
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/txtWaist"
-                                        android:paddingBottom="20dp"
-                                        android:paddingTop="20dp"
-                                        android:hint="Waist circumference"
-                                        android:inputType="numberDecimal"/>
-
-                                    <EditText
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/txtHip"
-                                        android:paddingBottom="20dp"
-                                        android:paddingTop="20dp"
-                                        android:inputType="numberDecimal"
-                                        android:hint="Hip circumference"/>
-
-                                    <EditText
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/txtInseam"
-                                        android:paddingBottom="20dp"
-                                        android:paddingTop="20dp"
-                                        android:hint="Inseam circumference"
-                                        android:inputType="numberDecimal"/>
-
-                                    <EditText
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/txtComment"
-                                        android:paddingBottom="20dp"
-                                        android:paddingTop="20dp"
-                                        android:hint="Enter comment"/>
-
+                                        android:text="Save Record"
+                                        android:id="@+id/btnAdd"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="10dp"
+                                        android:background="#E57373"
+                                        android:textColor="@android:color/black"
+                                        android:enabled="false"/>
 
                                 </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    android:paddingTop="150dp">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="inches"
-                                        style="@style/BodyColorT"
-                                        android:paddingBottom="50dp"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:paddingBottom="45dp"
-                                        style="@style/BodyColorT"
-                                        android:text="inches"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:paddingBottom="45dp"
-                                        style="@style/BodyColorT"
-                                        android:text="inches"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:paddingBottom="45dp"
-                                        style="@style/BodyColorT"
-                                        android:text="inches"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:paddingBottom="45dp"
-                                        style="@style/BodyColorT"
-                                        android:text="inches"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        style="@style/BodyColorT"
-                                        android:text="inches"/>
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <Button
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Save Record"
-                                android:id="@+id/btnAdd"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="10dp"
-                                android:background="#E57373"
-                                android:textColor="@android:color/black"
-                                android:enabled="false"/>
+                            </ScrollView>
 
                         </LinearLayout>
 
@@ -338,8 +347,6 @@
                         </LinearLayout>
 
                     </FrameLayout>
-
-                </ScrollView>
 
             </LinearLayout>
 

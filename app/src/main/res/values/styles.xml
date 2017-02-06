@@ -1,11 +1,12 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimaryDark">#311B92</item>
         <item name="colorPrimary">#B71C1C</item>
         <item name="colorAccent">#00796B</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
