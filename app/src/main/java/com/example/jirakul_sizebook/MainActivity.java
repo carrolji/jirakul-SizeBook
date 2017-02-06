@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
                     nameTxt.setText("");
                     dateTxt.setText("");
                     bustTxt.setText("");
-                    chestTxt.setText("");
+                    //chestTxt.setText("");
                     waistTxt.setText("");
                     hipTxt.setText("");
                     inseamTxt.setText("");
