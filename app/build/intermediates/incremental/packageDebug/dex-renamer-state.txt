@@ -1,0 +1,7 @@
+#Sun Feb 05 19:38:30 MST 2017
+base.0=C\:\\Users\\carrotji\\AndroidStudioProjects\\jirakul-SizeBook\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_09b930f76bf00d28972d353b714a7b97fd75d978
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\carrotji\\AndroidStudioProjects\\jirakul-SizeBook\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_95d80577cf7b74f751ac582ed2577e3acda5b23e\\classes.dex
+base.1=C\:\\Users\\carrotji\\AndroidStudioProjects\\jirakul-SizeBook\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_95d80577cf7b74f751ac582ed2577e3acda5b23e
+file.0=C\:\\Users\\carrotji\\AndroidStudioProjects\\jirakul-SizeBook\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_09b930f76bf00d28972d353b714a7b97fd75d978\\classes.dex
