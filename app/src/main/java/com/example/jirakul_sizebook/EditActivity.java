@@ -22,9 +22,6 @@ import static com.example.jirakul_sizebook.MainActivity.validateJavaDate;
  */
 public class EditActivity extends AppCompatActivity {
 
-    /* The Contacts list. */
-    List<Contact> contactsList = new ArrayList<Contact>();
-
     private EditText nameTxt;
     private EditText dateTxt;
     private EditText neckTxt;
@@ -104,7 +101,6 @@ public class EditActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 
@@ -197,10 +193,9 @@ public class EditActivity extends AppCompatActivity {
 
             }
 
+
         }
     };
-
-
 
 }
 

@@ -49,8 +49,6 @@ public class DetailsActivity extends AppCompatActivity {
     protected String oldInseam;
     protected String oldComment;
 
-    //List<Contact> contactsList = new ArrayList<Contact>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
