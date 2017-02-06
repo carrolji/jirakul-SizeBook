@@ -16,6 +16,8 @@
         android:layout_height="?attr/actionBarSize"
         android:background="#B71C1C"
         android:elevation="4dp"
+        app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+        android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
         <TabHost
@@ -317,7 +319,7 @@
                         <LinearLayout
                             android:id="@+id/tabContactList"
                             android:layout_width="match_parent"
-                            android:layout_height="502dp"
+                            android:layout_height="match_parent"
                             android:orientation="vertical">
 
                             <TextView
