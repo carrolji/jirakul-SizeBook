@@ -730,7 +730,6 @@ int id clip_horizontal 0x7f0d0032
 int id clip_vertical 0x7f0d0033
 int id collapseActionView 0x7f0d003b
 int id comment_header 0x7f0d0098
-int id contactName 0x7f0d00ae
 int id contentPanel 0x7f0d004e
 int id content_details 0x7f0d0091
 int id custom 0x7f0d0055
@@ -784,6 +783,7 @@ int id list_item 0x7f0d0048
 int id lv_bust 0x7f0d00af
 int id lv_chest 0x7f0d00b0
 int id lv_inseam 0x7f0d00b2
+int id lv_name 0x7f0d00ae
 int id lv_waist 0x7f0d00b1
 int id masked 0x7f0d00cb
 int id media_actions 0x7f0d00b9

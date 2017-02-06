@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.jirakul_sizebook.MainActivity.isOneDecimal;
-import static com.example.jirakul_sizebook.MainActivity.validateJavaDate;
+import static com.example.jirakul_sizebook.MainActivity.validateDate;
 
 /**
  * The type Edit activity.
@@ -144,7 +144,7 @@ public class EditActivity extends AppCompatActivity {
             else if(!isOneDecimal(inseam)){
                 inseamTxt.setError(error);
             }
-            else if(!validateJavaDate(date)){
+            else if(!validateDate(date)){
                 dateTxt.setError("Date format invalid");
             }
             else{

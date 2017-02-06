@@ -2708,7 +2708,6 @@ containing a value of this type.
         public static final int clip_vertical=0x7f0d0033;
         public static final int collapseActionView=0x7f0d003b;
         public static final int comment_header=0x7f0d0098;
-        public static final int contactName=0x7f0d00ae;
         public static final int contentPanel=0x7f0d004e;
         public static final int content_details=0x7f0d0091;
         public static final int custom=0x7f0d0055;
@@ -2762,6 +2761,7 @@ containing a value of this type.
         public static final int lv_bust=0x7f0d00af;
         public static final int lv_chest=0x7f0d00b0;
         public static final int lv_inseam=0x7f0d00b2;
+        public static final int lv_name=0x7f0d00ae;
         public static final int lv_waist=0x7f0d00b1;
         public static final int masked=0x7f0d00cb;
         public static final int media_actions=0x7f0d00b9;

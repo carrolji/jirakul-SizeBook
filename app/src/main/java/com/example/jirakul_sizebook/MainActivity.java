@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 else if(!isOneDecimal(inseam)){
                     inseamTxt.setError(error);
                 }
-                else if(!validateJavaDate(date)){
+                else if(!validateDate(date)){
                     dateTxt.setError("Date format invalid");
                 }
                 else {
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
      * @param strDate the str date
      * @return the boolean
      */
-    public static boolean validateJavaDate(String strDate) {
+    public static boolean validateDate(String strDate) {
         if (strDate.trim().equals("")) {
             return true;
         }
@@ -298,12 +298,14 @@ public class MainActivity extends AppCompatActivity {
         else {
         /* parse the string into date form */
             try {
-                // Set Date format
+                /* Set Date format */
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
                 sdf.setLenient(false);
                 sdf.parse(strDate);
-            } catch (ParseException e) { return false; }
-        /* Return 'true' - since date is in valid format */
+            } catch (ParseException e) {
+                return false;
+            }
+
             return true;
         }
     }
@@ -333,7 +335,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Display Edit and Delete record when long click on list item
-     *
      * @param item
      * @return
      */
@@ -398,7 +399,7 @@ public class MainActivity extends AppCompatActivity {
             /**
              * Display Name, bust, chest, waist in listView.
              */
-            TextView name = (TextView) view.findViewById(R.id.contactName);
+            TextView name = (TextView) view.findViewById(R.id.lv_name);
             name.setText(currentContact.getName());
             TextView bust = (TextView) view.findViewById(R.id.lv_bust);
             if(currentContact.getBust().equals("")){
