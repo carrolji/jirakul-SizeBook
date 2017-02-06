@@ -71,17 +71,24 @@ public class MainActivity extends AppCompatActivity {
     protected EditText commentTxt;
     protected EditText hipTxt;
 
-    private static final int EDIT = 0, DELETE = 1;
+    /* Constant for context menu option */
+    private static final int EDIT = 0;
+    private static final int DELETE = 1;
 
+    /**
+     * The Long clicked item index.
+     */
+    int longClickedItemIndex;
+
+    /**
+     * Contact array list
+     */
     protected List<Contact> contactsList = new ArrayList<Contact>();
     /**
      * The Contact list view.
      */
     protected ListView contactListView;
-    /**
-     * The Long clicked item index.
-     */
-    int longClickedItemIndex;
+
     /**
      * The Contact adapter.
      */
@@ -109,16 +116,7 @@ public class MainActivity extends AppCompatActivity {
         commentTxt = (EditText) findViewById(R.id.txtComment);
 
         contactListView = (ListView) findViewById(R.id.listView);
-
         registerForContextMenu(contactListView);
-        contactListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                longClickedItemIndex = position;
-
-                return false;
-            }
-        });
 
         /**
          * Setting up Tab bar
@@ -261,6 +259,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Pop up menu when long click on listView
+         */
+        contactListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                longClickedItemIndex = position;
+
+                return false;
+            }
+        });
+
     }
 
     /**
@@ -320,7 +330,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Create pop up Context Menu
+     * Taken from: http://stackoverflow.com/questions/9114912/what-is-context-menu-method-registerforcontextmenu
+     * 2017-01-31
      * @param menu
      * @param view
      * @param menuInfo
@@ -328,8 +340,8 @@ public class MainActivity extends AppCompatActivity {
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu,view,menuInfo);
         menu.setHeaderTitle("Record Options");
-        menu.add(Menu.NONE,EDIT,menu.NONE,"Edit Record");
-        menu.add(Menu.NONE,DELETE,menu.NONE,"Delete Record");
+        menu.add(Menu.NONE, EDIT, menu.NONE, "Edit Record");
+        menu.add(Menu.NONE, DELETE, menu.NONE, "Delete Record");
     }
 
 
@@ -401,6 +413,7 @@ public class MainActivity extends AppCompatActivity {
              */
             TextView name = (TextView) view.findViewById(R.id.lv_name);
             name.setText(currentContact.getName());
+
             TextView bust = (TextView) view.findViewById(R.id.lv_bust);
             if(currentContact.getBust().equals("")){
                 bust.setText("");
