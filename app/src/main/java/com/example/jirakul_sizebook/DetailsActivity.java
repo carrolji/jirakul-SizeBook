@@ -28,84 +28,31 @@ import static com.example.jirakul_sizebook.R.styleable.FloatingActionButton;
 public class DetailsActivity extends AppCompatActivity {
 
     private Button backButton;
-    /**
-     * The Save name.
-     */
+
     protected TextView saveName;
-    /**
-     * The Save date.
-     */
     protected TextView saveDate;
-    /**
-     * The Save neck.
-     */
     protected TextView saveNeck;
-    /**
-     * The Save bust.
-     */
     protected TextView saveBust;
-    /**
-     * The Save chest.
-     */
     protected TextView saveChest;
-    /**
-     * The Save waist.
-     */
     protected TextView saveWaist;
-    /**
-     * The Save hip.
-     */
     protected TextView saveHip;
-    /**
-     * The Save inseam.
-     */
     protected TextView saveInseam;
-    /**
-     * The Save comment.
-     */
     protected TextView saveComment;
+
+    protected String oldName;
+    protected String oldDate;
+    protected String oldNeck;
+    protected String oldBust;
+    protected String oldChest;
+    protected String oldWaist;
+    protected String oldHip;
+    protected String oldInseam;
+    protected String oldComment;
 
     /**
      * The Contacts list.
      */
     List<Contact> contactsList = new ArrayList<Contact>();
-
-    /**
-     * The Old name.
-     */
-    protected String oldName;
-    /**
-     * The Old date.
-     */
-    protected String oldDate;
-    /**
-     * The Old neck.
-     */
-    protected String oldNeck;
-    /**
-     * The Old bust.
-     */
-    protected String oldBust;
-    /**
-     * The Old chest.
-     */
-    protected String oldChest;
-    /**
-     * The Old waist.
-     */
-    protected String oldWaist;
-    /**
-     * The Old hip.
-     */
-    protected String oldHip;
-    /**
-     * The Old inseam.
-     */
-    protected String oldInseam;
-    /**
-     * The Old comment.
-     */
-    protected String oldComment;
 
 
     @Override
@@ -115,6 +62,9 @@ public class DetailsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /**
+         * Get Serializable key from the MainActivity
+         */
         Contact contact = (Contact)getIntent().getSerializableExtra("result");
 
         saveName = (TextView) findViewById(R.id.name);
@@ -129,6 +79,9 @@ public class DetailsActivity extends AppCompatActivity {
 
         backButton = (Button) findViewById(R.id.back_button);
 
+        /**
+         * Get contact object
+         */
         oldName = contact.getName();
         oldDate = contact.getDate();
         oldNeck = contact.getNeck();
@@ -139,6 +92,9 @@ public class DetailsActivity extends AppCompatActivity {
         oldInseam = contact.getInseam();
         oldComment = contact.getComment();
 
+        /**
+         * Display contact object in TextView
+         */
         saveName.setText(oldName);
         saveDate.setText(oldDate);
         saveNeck.setText(oldNeck);
@@ -149,14 +105,15 @@ public class DetailsActivity extends AppCompatActivity {
         saveInseam.setText(oldInseam);
         saveComment.setText(oldComment);
 
-        backButton.setOnClickListener(saveButtonListener);
+        backButton.setOnClickListener(backButtonListener);
 
     }
 
     /**
-     * The Save button listener.
+     * The Back button listener,
+     * return to main activity
      */
-    public View.OnClickListener saveButtonListener = new View.OnClickListener(){
+    public View.OnClickListener backButtonListener = new View.OnClickListener(){
 
         @Override
         public void onClick(View v) {

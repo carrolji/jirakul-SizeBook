@@ -5,26 +5,26 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="74774342745295"
+    timestamp="75182920630396"
     token="-8379893245379827852"
-    verifier="COMPATIBLE" >
+    verifier="FIELD_TYPE_CHANGE" >
 
     <task
         name="javac"
-        duration="379" />
+        duration="548" />
     <task
         name="instant-run-dex"
-        duration="27" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="88" />
+        duration="115" />
     <task
         name="verifier"
-        duration="100" />
+        duration="103" />
 
     <artifact
-        location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+        type="DEX" />
 
     <build
         timestamp="73441514357040"
@@ -34,25 +34,11 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="74136676533185"
-        verifier="COMPATIBLE" >
+        timestamp="75182920630396"
+        verifier="FIELD_TYPE_CHANGE" >
         <artifact
-            location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\builds\debug\74136676533185\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="74314197181403"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\builds\debug\74314197181403\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="74774342745295"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
+            location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>
