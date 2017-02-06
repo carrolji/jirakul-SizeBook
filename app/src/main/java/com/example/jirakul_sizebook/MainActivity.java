@@ -337,6 +337,7 @@ public class MainActivity extends AppCompatActivity {
                 // Creates a new Intent to edit a contact
                 //setResult(RESULT_OK);
                 Intent editIntent = new Intent(MainActivity.this,EditActivity.class);
+                editIntent.putExtra("position",longClickedItemIndex);
                 editIntent.putExtra("result",(Serializable) contactListView.getItemAtPosition(longClickedItemIndex));
                 startActivityForResult(editIntent,1);
                 saveInFile();
