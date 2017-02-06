@@ -50,45 +50,31 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private static final int EDIT = 0, DELETE = 1;
 
-    //create new file
+
+    /**
+     * The file that all the tweets are saved there.
+     * The format of the file is JSON.
+     * @see #loadFromFile()
+     * @see #saveInFile()
+     */
     private static final String FILENAME = "file1.sav";
 
     /**
-     * The Name txt.
+     * Initialized Record EditText
      */
-    EditText nameTxt, /**
-     * The Date txt.
-     */
-    dateTxt;
-    /**
-     * The Neck txt.
-     */
-    EditText neckTxt, /**
-     * The Bust txt.
-     */
-    bustTxt, /**
-     * The Chest txt.
-     */
-    chestTxt, /**
-     * The Waist txt.
-     */
-    waistTxt, /**
-     * The Inseam txt.
-     */
-    inseamTxt;
-    /**
-     * The Comment txt.
-     */
+    EditText nameTxt;
+    EditText dateTxt;
+    EditText neckTxt;
+    EditText bustTxt;
+    EditText chestTxt;
+    EditText waistTxt;
+    EditText inseamTxt;
     EditText commentTxt;
-    /**
-     * The Hip txt.
-     */
     EditText hipTxt;
-    /**
-     * The Contacts list.
-     */
+
+    private static final int EDIT = 0, DELETE = 1;
+
     List<Contact> contactsList = new ArrayList<Contact>();
     /**
      * The Contact list view.
@@ -104,7 +90,10 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<Contact> contactAdapter;
 
 
-
+    /**
+     * Called when the activity is first created.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -425,7 +414,11 @@ public class MainActivity extends AppCompatActivity {
         showTotalRecord();
     }
 
-
+    /**
+     * Loads contacts from file.
+     * @exception FileNotFoundException if the file is not created
+     * @exception IOException if input or output fails
+     */
     private void loadFromFile(){
         try {
             FileInputStream fis = openFileInput(FILENAME);
@@ -440,6 +433,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Saves tweets in file in JSON format.
+     * @exception  FileNotFoundException if folder not exists
+     * @exception IOException if input or output fails
+     */
     private void saveInFile(){
         try{
             FileOutputStream fos = openFileOutput(FILENAME,
