@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * The Long clicked item index.
      */
-    int longClickedItemIndex;
+    protected int longClickedItemIndex;
 
     /**
      * Contact array list
