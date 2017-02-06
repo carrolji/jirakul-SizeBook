@@ -5,21 +5,26 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="78810285061941"
-    token="-8379893245379827852" >
+    timestamp="79136015649332"
+    token="-8379893245379827852"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="228" />
+        duration="286" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="24" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="83" />
     <task
         name="verifier"
-        duration="0" />
+        duration="12" />
+
+    <artifact
+        location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         timestamp="73441514357040"
@@ -56,6 +61,12 @@
             location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\builds\debug\78682616237255\classes.dex"
             type="RELOAD_DEX" />
     </build>
-    <build timestamp="78810285061941" />
+    <build
+        timestamp="79136015649332"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
 
 </instant-run>

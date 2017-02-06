@@ -295,6 +295,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Validate date format.
      * return true if the string is empty
+     * parse the string into date format
      * Taken from: http://beginnersbook.com/2013/05/java-date-format-validation/
      * 2017-02-04
      * @param strDate the str date
@@ -306,9 +307,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else {
-        /* parse the string into date form */
             try {
-                /* Set Date format */
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
                 sdf.setLenient(false);
                 sdf.parse(strDate);
