@@ -2820,9 +2820,9 @@ containing a value of this type.
         public static final int status_bar_latest_event_content=0x7f0d00b8;
         public static final int submenuarrow=0x7f0d005e;
         public static final int submit_area=0x7f0d006f;
-        public static final int tabContactList=0x7f0d008c;
-        public static final int tabCreator=0x7f0d0082;
+        public static final int tabAdd=0x7f0d0082;
         public static final int tabHost=0x7f0d0081;
+        public static final int tabList=0x7f0d008c;
         public static final int tabMode=0x7f0d0011;
         public static final int text=0x7f0d00c8;
         public static final int text2=0x7f0d00c6;

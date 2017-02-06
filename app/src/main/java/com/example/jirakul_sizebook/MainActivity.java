@@ -50,8 +50,6 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
 
-
-
     /**
      * The file that all the tweets are saved there.
      * The format of the file is JSON.
@@ -63,23 +61,23 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Initialized Record EditText
      */
-    EditText nameTxt;
-    EditText dateTxt;
-    EditText neckTxt;
-    EditText bustTxt;
-    EditText chestTxt;
-    EditText waistTxt;
-    EditText inseamTxt;
-    EditText commentTxt;
-    EditText hipTxt;
+    protected EditText nameTxt;
+    protected EditText dateTxt;
+    protected EditText neckTxt;
+    protected EditText bustTxt;
+    protected EditText chestTxt;
+    protected EditText waistTxt;
+    protected EditText inseamTxt;
+    protected EditText commentTxt;
+    protected EditText hipTxt;
 
     private static final int EDIT = 0, DELETE = 1;
 
-    List<Contact> contactsList = new ArrayList<Contact>();
+    protected List<Contact> contactsList = new ArrayList<Contact>();
     /**
      * The Contact list view.
      */
-    ListView contactListView;
+    protected ListView contactListView;
     /**
      * The Long clicked item index.
      */
@@ -87,8 +85,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * The Contact adapter.
      */
-    ArrayAdapter<Contact> contactAdapter;
-
+    protected ArrayAdapter<Contact> contactAdapter;
 
     /**
      * Called when the activity is first created.
@@ -111,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
         neckTxt = (EditText) findViewById(R.id.txtNeck);
         commentTxt = (EditText) findViewById(R.id.txtComment);
 
-        //assignListView
         contactListView = (ListView) findViewById(R.id.listView);
 
         registerForContextMenu(contactListView);
@@ -123,18 +119,20 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        // Adding Tab
+
+        /**
+         * Setting up Tab bar
+         */
         final TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
 
         tabHost.setup();
-
         TabHost.TabSpec tabSpec = tabHost.newTabSpec("list");
-        tabSpec.setContent(R.id.tabContactList);
+        tabSpec.setContent(R.id.tabList);
         tabSpec.setIndicator("List");
         tabHost.addTab(tabSpec);
 
-        tabSpec = tabHost.newTabSpec("creator");
-        tabSpec.setContent(R.id.tabCreator);
+        tabSpec = tabHost.newTabSpec("Add");
+        tabSpec.setContent(R.id.tabAdd);
         tabSpec.setIndicator("Add");
         tabHost.addTab(tabSpec);
 

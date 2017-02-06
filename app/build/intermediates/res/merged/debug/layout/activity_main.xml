@@ -43,7 +43,7 @@
                         android:layout_height="match_parent">
 
                         <LinearLayout
-                            android:id="@+id/tabCreator"
+                            android:id="@+id/tabAdd"
                             android:padding="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -317,7 +317,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/tabContactList"
+                            android:id="@+id/tabList"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical">

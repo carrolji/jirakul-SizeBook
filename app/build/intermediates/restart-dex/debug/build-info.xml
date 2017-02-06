@@ -5,26 +5,29 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="76075353108359"
+    timestamp="76418630113768"
     token="-8379893245379827852"
-    verifier="COMPATIBLE" >
+    verifier="R_CLASS_CHANGE" >
 
     <task
         name="javac"
-        duration="308" />
+        duration="1311" />
     <task
         name="instant-run-dex"
-        duration="115" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="107" />
+        duration="67" />
     <task
         name="verifier"
-        duration="25" />
+        duration="31" />
 
     <artifact
-        location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+        type="DEX" />
 
     <build
         timestamp="73441514357040"
@@ -34,18 +37,14 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="76016310904520"
-        verifier="FIELD_REMOVED" >
+        timestamp="76418630113768"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
         <artifact
             location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
             type="DEX" />
-    </build>
-    <build
-        timestamp="76075353108359"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\carrotji\AndroidStudioProjects\jirakul-SizeBook\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

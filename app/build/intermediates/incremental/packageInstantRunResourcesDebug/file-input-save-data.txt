@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Feb 05 22:46:30 MST 2017
+#Sun Feb 05 23:35:59 MST 2017
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=C\:\\Users\\carrotji\\AndroidStudioProjects\\jirakul-SizeBook\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\color\\abc_primary_text_material_light.xml
